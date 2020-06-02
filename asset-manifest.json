@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/ReferralApp/static/css/main.5f361e03.chunk.css",
+    "main.js": "/ReferralApp/static/js/main.7e5063b6.chunk.js",
+    "main.js.map": "/ReferralApp/static/js/main.7e5063b6.chunk.js.map",
+    "runtime-main.js": "/ReferralApp/static/js/runtime-main.ffbfbe3b.js",
+    "runtime-main.js.map": "/ReferralApp/static/js/runtime-main.ffbfbe3b.js.map",
+    "static/js/2.85e52c51.chunk.js": "/ReferralApp/static/js/2.85e52c51.chunk.js",
+    "static/js/2.85e52c51.chunk.js.map": "/ReferralApp/static/js/2.85e52c51.chunk.js.map",
+    "index.html": "/ReferralApp/index.html",
+    "precache-manifest.70e1ad28ca11455947bbc962e0890bac.js": "/ReferralApp/precache-manifest.70e1ad28ca11455947bbc962e0890bac.js",
+    "service-worker.js": "/ReferralApp/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/ReferralApp/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.85e52c51.chunk.js.LICENSE.txt": "/ReferralApp/static/js/2.85e52c51.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/ReferralApp/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ffbfbe3b.js",
+    "static/js/2.85e52c51.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.7e5063b6.chunk.js"
+  ]
+}
