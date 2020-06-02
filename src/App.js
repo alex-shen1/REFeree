@@ -5,9 +5,12 @@ import Progress from './Components/Progress.js';
 import AboutPage from './Components/AboutPage.js';
 import HomePage from "./Components/HomePage"
 import Login from "./Components/Login"
-
+import ReferralLanding from "./Components/ReferralLanding"
 import Refer from './Components/Refer.js';
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+
+
+import { sampleData } from "./data"
 
 
 import firebase from "./firebase"
@@ -66,6 +69,10 @@ class App extends React.Component {
                 handleGoogleLogin={this.handleGoogleLogin}
                 isLoggedIn={this.state.isLoggedIn}
                 handleLogout={this.handleLogout} />} />
+                {Object.keys(sampleData).map(id => {
+                  return <Route exact path={`/ref/${id}`} render={(props) =>
+                        <ReferralLanding {...props} id={id}   />} />
+                })}
           </Switch>
         </Router>
 
