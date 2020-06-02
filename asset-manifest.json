@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/ReferralApp/static/css/main.5f361e03.chunk.css",
-    "main.js": "/ReferralApp/static/js/main.7e5063b6.chunk.js",
-    "main.js.map": "/ReferralApp/static/js/main.7e5063b6.chunk.js.map",
-    "runtime-main.js": "/ReferralApp/static/js/runtime-main.ffbfbe3b.js",
-    "runtime-main.js.map": "/ReferralApp/static/js/runtime-main.ffbfbe3b.js.map",
-    "static/js/2.85e52c51.chunk.js": "/ReferralApp/static/js/2.85e52c51.chunk.js",
-    "static/js/2.85e52c51.chunk.js.map": "/ReferralApp/static/js/2.85e52c51.chunk.js.map",
-    "index.html": "/ReferralApp/index.html",
-    "precache-manifest.70e1ad28ca11455947bbc962e0890bac.js": "/ReferralApp/precache-manifest.70e1ad28ca11455947bbc962e0890bac.js",
-    "service-worker.js": "/ReferralApp/service-worker.js",
-    "static/css/main.5f361e03.chunk.css.map": "/ReferralApp/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.85e52c51.chunk.js.LICENSE.txt": "/ReferralApp/static/js/2.85e52c51.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/ReferralApp/static/media/logo.5d5d9eef.svg"
+    "main.css": "/REFeree/static/css/main.5f361e03.chunk.css",
+    "main.js": "/REFeree/static/js/main.819aa9af.chunk.js",
+    "main.js.map": "/REFeree/static/js/main.819aa9af.chunk.js.map",
+    "runtime-main.js": "/REFeree/static/js/runtime-main.91ee6249.js",
+    "runtime-main.js.map": "/REFeree/static/js/runtime-main.91ee6249.js.map",
+    "static/js/2.85e52c51.chunk.js": "/REFeree/static/js/2.85e52c51.chunk.js",
+    "static/js/2.85e52c51.chunk.js.map": "/REFeree/static/js/2.85e52c51.chunk.js.map",
+    "index.html": "/REFeree/index.html",
+    "precache-manifest.36db7c640a114b4b55513f621a2c7b9d.js": "/REFeree/precache-manifest.36db7c640a114b4b55513f621a2c7b9d.js",
+    "service-worker.js": "/REFeree/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/REFeree/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.85e52c51.chunk.js.LICENSE.txt": "/REFeree/static/js/2.85e52c51.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/REFeree/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.ffbfbe3b.js",
+    "static/js/runtime-main.91ee6249.js",
     "static/js/2.85e52c51.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.7e5063b6.chunk.js"
+    "static/js/main.819aa9af.chunk.js"
   ]
 }
