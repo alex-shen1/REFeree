@@ -26,20 +26,6 @@ class App extends React.Component {
   componentDidMount() {
     this.loadUserData(); // run in case user is logged in, but page refreshed
   }
-  setActiveUser = (user) => {
-    this.setState({ activeUser: user })
-  }
-
-  handleGoogleLogin = () => {
-    auth.signInWithPopup(googleProvider);
-    auth.getRedirectResult().then(result => {
-      // idk what to do with this
-    }).catch(error => {
-      console.log(error);
-    })
-
-    this.loadUserData()
-  }
 
   loadUserData = () => {
     firebase.auth().onAuthStateChanged(user => {
@@ -52,11 +38,6 @@ class App extends React.Component {
     });
   }
 
-  handleLogout = () => {
-    console.log("logging out")
-    this.setState({ isLoggedIn: false, activeUser: null })
-    auth.signOut()
-  }
   test = () => {
     console.log(this.state.activeUser)
   }
@@ -80,16 +61,17 @@ class App extends React.Component {
             <Route exact path="/FAQ" component={FAQ} />
             <Route exact path="/login" render={(props) =>
               <Login {...props}
+                loadUserData={this.loadUserData}
                 handleGoogleLogin={this.handleGoogleLogin}
                 isLoggedIn={this.state.isLoggedIn}
                 handleLogout={this.handleLogout} />} />
           </Switch>
         </Router>
 
-        {/* <button onClick={this.handleGoogleLogin}>Log in w/ google</button>
+        {/* <button onClick={this.handleGoogleLogin}>Log in w/ google</button> */}
         <button onClick={this.loadUserData}>Print user</button>
-        <button onClick={()=>auth.signOut()}>Sign out</button>
-            <button onClick={this.test}>TEST</button> */}
+        {/* <button onClick={()=>auth.signOut()}>Sign out</button> */}
+        {/* <button onClick={this.test}>TEST</button> */}
       </div>
 
     )
