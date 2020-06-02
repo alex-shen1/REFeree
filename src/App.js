@@ -18,54 +18,55 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeUser: null, // UID of current user
-      isLoggedIn: false
+      // activeUser: null, // UID of current user
+      // isLoggedIn: false
     }
   }
 
-  componentDidMount() {
-    this.loadUserData(); // run in case user is logged in, but page refreshed
-  }
-  setActiveUser = (user) => {
-    this.setState({ activeUser: user })
-  }
+  // componentDidMount() {
+  //   this.loadUserData(); // run in case user is logged in, but page refreshed
+  // }
+  // setActiveUser = (user) => {
+  //   this.setState({ activeUser: user })
+  // }
 
-  handleGoogleLogin = () => {
-    auth.signInWithPopup(googleProvider);
-    auth.getRedirectResult().then(result => {
-      // idk what to do with this
-    }).catch(error => {
-      console.log(error);
-    })
+  // handleGoogleLogin = () => {
+  //   auth.signInWithPopup(googleProvider);
+  //   auth.getRedirectResult().then(result => {
+  //     // idk what to do with this
+  //   }).catch(error => {
+  //     console.log(error);
+  //   })
 
-    this.loadUserData()
-  }
+  //   this.loadUserData()
+  //   console.log(this.state)
+  // }
 
-  loadUserData = () => {
-    firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        console.log(user)
-        this.setState({ activeUser: user.uid, isLoggedIn: true })
-      } else {
-        // console.log("no user")
-      }
-    });
-  }
+  // loadUserData = () => {
+  //   firebase.auth().onAuthStateChanged(user => {
+  //     if (user) {
+  //       console.log(user)
+  //       this.setState({ activeUser: user.uid, isLoggedIn: true })
+  //     } else {
+  //       console.log("no user")
+  //     }
+  //   });
+  // }
 
-  handleLogout = () => {
-    console.log("logging out")
-    this.setState({ isLoggedIn: false, activeUser: null })
-    auth.signOut()
-  }
-  test = () => {
-    console.log(this.state.activeUser)
-  }
+  // handleLogout = () => {
+  //   console.log("logging out")
+  //   this.setState({ isLoggedIn: false, activeUser: null })
+  //   auth.signOut()
+  // }
+  // test = () => {
+  //   console.log(this.state.activeUser)
+  // }
 
   render() {
 
     return (
       <div className="app">
-        <Router>
+        {/* <Router>
           <Switch>
             <Route exact path="/" render={props => {
               console.log(this)
@@ -84,12 +85,18 @@ class App extends React.Component {
                 isLoggedIn={this.state.isLoggedIn}
                 handleLogout={this.handleLogout} />} />
           </Switch>
+        </Router> */}
+
+        {/* <Login />
+        <HomePage /> */}
+
+        <Router>
+          <Switch>
+            <Route path='/' component={Login} />
+            <Route path='/home' component={HomePage} />
+          </Switch>
         </Router>
 
-        {/* <button onClick={this.handleGoogleLogin}>Log in w/ google</button>
-        <button onClick={this.loadUserData}>Print user</button>
-        <button onClick={()=>auth.signOut()}>Sign out</button>
-            <button onClick={this.test}>TEST</button> */}
       </div>
 
     )

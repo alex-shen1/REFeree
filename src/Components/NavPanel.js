@@ -15,14 +15,6 @@ class NavPanel extends React.Component {
         }
     }
 
-    /*
-                        <Nav className="mr-auto">
-                            <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="#aboutUs">About Us </Nav.Link>
-                            <Nav.Link href="#faq">FAQ</Nav.Link>
-                        </Nav>
-    */
-
     render() {
 
         return (
@@ -31,11 +23,11 @@ class NavPanel extends React.Component {
                     <Navbar.Brand href="#home">REFeree</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <div>
-                            <Link to='/home'> Home </Link>
-                            <Link to='/aboutUs'>About Us </Link>
-                            <Link to='/faq'>FAQ</Link>
-                        </div>
+                        <Nav className="mr-auto">
+                            <Nav.Link href="/home">Home</Nav.Link>
+                            <Nav.Link href="/aboutUs">About Us </Nav.Link>
+                            <Nav.Link href="/faq">FAQ</Nav.Link>
+                        </Nav>
                     </Navbar.Collapse>
                 </Navbar>
             </div>
