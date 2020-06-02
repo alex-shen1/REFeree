@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import NavPanel from './Components/NavPanel.js';
 import Progress from './Components/Progress.js';
-import FAQ from './Components/FAQ.js';
+import AboutPage from './Components/AboutPage.js';
 import HomePage from "./Components/HomePage"
 import Login from "./Components/Login"
 
@@ -10,7 +10,7 @@ import Refer from './Components/Refer.js';
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
 
-import firebase, { auth, googleProvider } from "./firebase"
+import firebase from "./firebase"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -49,16 +49,17 @@ class App extends React.Component {
         <Router>
           <Switch>
             <Route exact path="/" render={props => {
-              console.log(this)
-              console.log(this.state)
-              console.log(this.state.isLoggedIn)
-              console.log(props);
-              return this.state.isLoggedIn ?
-                <Redirect to='/home' /> :
-                <Redirect to='/login' />
+              return <Redirect to='/home' />
+              // console.log(this)
+              // console.log(this.state)
+              // console.log(this.state.isLoggedIn)
+              // console.log(props);
+              // return this.state.isLoggedIn ?
+              //   <Redirect to='/home' /> :
+              //   <Redirect to='/login' />
             }} />
             <Route exact path="/home" component={HomePage} />
-            <Route exact path="/FAQ" component={FAQ} />
+            <Route exact path="/about" component={AboutPage} />
             <Route exact path="/login" render={(props) =>
               <Login {...props}
                 loadUserData={this.loadUserData}

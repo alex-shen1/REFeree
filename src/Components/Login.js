@@ -2,7 +2,7 @@ import React from 'react';
 import '../Styling/Login.css';
 
 
-import firebase, { auth, googleProvider } from "../firebase"
+import { auth, googleProvider } from "../firebase"
 
 export default class Login extends React.Component {
     constructor(props) {
