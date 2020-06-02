@@ -46,7 +46,7 @@ class App extends React.Component {
 
     return (
       <div className="app">
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <Switch>
             <Route exact path="/" render={props => {
               return <Redirect to='/home' />
