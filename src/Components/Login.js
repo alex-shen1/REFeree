@@ -1,18 +1,12 @@
 import React from 'react';
 import '../Styling/Login.css';
 import firebase from '../firebase.js';
-import withFirebaseAuth from 'react-with-firebase-auth'
 import 'firebase/auth';
 
 
-const firebaseApp = firebase.initializeApp(firebase);
+import { auth, googleProvider } from "../firebase"
 
-const firebaseAppAuth = firebaseApp.auth();
-const providers = {
-    googleProvider: new firebase.auth.GoogleAuthProvider(),
-};
-
-class Login extends React.Component {
+export default class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -20,38 +14,44 @@ class Login extends React.Component {
         }
     }
 
-    handleLogin = () => {
-        this.props.signInWithGoogle();
-        console.log(this.props.user.uid)
+    setActiveUser = (user) => {
+        this.setState({ activeUser: user })
+    }
+
+    handleGoogleLogin = () => {
+        auth.signInWithPopup(googleProvider);
+        auth.getRedirectResult().then(result => {
+            // idk what to do with this
+        }).catch(error => {
+            console.log(error);
+        })
+
+        this.props.loadUserData()
+    }
+
+    handleLogout = () => {
+        console.log("logging out")
+        this.setState({ isLoggedIn: false, activeUser: null })
+        auth.signOut()
     }
 
 
     render() {
-        const {
-            user,
-            signOut,
-            signInWithGoogle,
-        } = this.props;
         return (
             <div className="App">
                 <header className="App-header">
                     {
-                        user
-                            ? <p>Hello, {user.displayName}</p>
+                        this.state.isLoggedIn
+                            ? <p>Hello, "NAME""</p>
                             : <p>Please sign in.</p>
                     }
                     {
-                        user
-                            ? <button onClick={signOut}>Sign out</button>
-                            : <button onClick={this.handleLogin}>Sign in with Google</button>
+                        this.state.isLoggedIn
+                            ? <button onClick={this.handleLogout} >Sign out</button>
+                            : <button onClick={this.handleGoogleLogin}>Sign in with Google</button>
                     }
                 </header>
             </div>
         )
     }
 }
-
-export default withFirebaseAuth({
-    providers,
-    firebaseAppAuth,
-})(Login);
