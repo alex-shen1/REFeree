@@ -1,21 +1,37 @@
 import React from 'react';
 import '../Styling/Progress.css';
 import Card from "react-bootstrap/Card";
+import ProgressBar from "react-bootstrap/ProgressBar";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 class Progress extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            referralCount: 4,
+            nextPrizeAt: 5
 
         }
     }
 
     render() {
-
         return (
             <div className="progressbar">
-                Progress
-                
+                <Row>
+                    <Col>
+                        <Card className='Card' >
+                            <Card.Body>
+                                <ProgressBar striped now={100 * (this.state.referralCount / this.state.nextPrizeAt)} style={{ margin: "0 auto", marginTop: "3vh", width: "40vw", float: "none" }} />
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                    <Col>
+                        <Card style={{ margin: "0 auto", width: "30vw", height: "25vh", marginTop: "3vh", marginBottom: "3vh", float: "none" }}>
+                            <Card.Body>You are __ referrals away!</Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
             </div>
         )
     }
