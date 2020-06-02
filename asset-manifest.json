@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/REFeree/static/css/main.817b4437.chunk.css",
-    "main.js": "/REFeree/static/js/main.7cd3524b.chunk.js",
-    "main.js.map": "/REFeree/static/js/main.7cd3524b.chunk.js.map",
+    "main.js": "/REFeree/static/js/main.b500f692.chunk.js",
+    "main.js.map": "/REFeree/static/js/main.b500f692.chunk.js.map",
     "runtime-main.js": "/REFeree/static/js/runtime-main.91ee6249.js",
     "runtime-main.js.map": "/REFeree/static/js/runtime-main.91ee6249.js.map",
     "static/css/2.af3c1da9.chunk.css": "/REFeree/static/css/2.af3c1da9.chunk.css",
     "static/js/2.d9387b23.chunk.js": "/REFeree/static/js/2.d9387b23.chunk.js",
     "static/js/2.d9387b23.chunk.js.map": "/REFeree/static/js/2.d9387b23.chunk.js.map",
     "index.html": "/REFeree/index.html",
-    "precache-manifest.5e0bc93554017a57999e807f255c6c18.js": "/REFeree/precache-manifest.5e0bc93554017a57999e807f255c6c18.js",
+    "precache-manifest.9c8ca306b9f8de6a7cc650b05a80be4e.js": "/REFeree/precache-manifest.9c8ca306b9f8de6a7cc650b05a80be4e.js",
     "service-worker.js": "/REFeree/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/REFeree/static/css/2.af3c1da9.chunk.css.map",
     "static/css/main.817b4437.chunk.css.map": "/REFeree/static/css/main.817b4437.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.af3c1da9.chunk.css",
     "static/js/2.d9387b23.chunk.js",
     "static/css/main.817b4437.chunk.css",
-    "static/js/main.7cd3524b.chunk.js"
+    "static/js/main.b500f692.chunk.js"
   ]
 }
