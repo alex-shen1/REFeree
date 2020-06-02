@@ -15,8 +15,12 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loggedIn: false
+      activeUser: null // UID of current user
     }
+  }
+
+  setActiveUser = (user) => {
+    this.setState({ activeUser: user })
   }
 
   render() {
@@ -25,10 +29,16 @@ class App extends React.Component {
       <Router>
         <div className="app">
           <Switch>
-            <Route path="/" component={HomePage} />
-            <Route path="/FAQ" component={FAQ} />
-            <Route path="/login" component={Login} />
-            {/* <Route path="/login" render={(props) => <Login {...props} test="test" />} /> */}
+            <Route exact path="/" render={() => {
+              return (
+                this.state.activeUser ?
+                  <Redirect to='/home' /> :
+                  <Redirect to='/login' />
+              )
+            }} />
+            <Rooute exact path="/home" component={HomePage} />
+            <Route exact path="/FAQ" component={FAQ} />
+            <Route exact path="/login" render={Login} />} />
           </Switch>
         </div>
       </Router>
