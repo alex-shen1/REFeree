@@ -32,8 +32,8 @@ class Refer extends React.Component {
                             <Card.Header>
                                 Your Referral Link:
                             </Card.Header>
-                            <Card.Body class="h3 text-center" style={{ margin: "0 auto", marginTop: "7vh", marginLeft: "3vh", marginRight: "3vh", float: "none" }}>
-                                {`alex-shen1.github.io${process.env.PUBLIC_URL}/#/ref/${this.props.activeUser}`} 
+                            <Card.Body class="h3 text-center" style={{ margin: "0 auto", marginTop: "3vh", marginLeft: "3vh", marginRight: "3vh", float: "none" }}>
+                                {`alex-shen1.github.io${process.env.PUBLIC_URL}/#/ref/${this.props.activeUser}`}
                             </Card.Body>
                         </Card>
                     </Col>
