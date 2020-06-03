@@ -73,7 +73,7 @@ class Progress extends React.Component {
                     </Col>
                     <Col>
                         <Card className='Message'>
-                            <Card.Body>You are {5 - this.state.referralCount % 5} referrals away from the next prize!!</Card.Body>
+                            <Card.Body>You are {5 - this.state.referralCount % 5} referral(s) away from the next prize!!</Card.Body>
                             <Card.Body>Next Prize: {prizes[Math.floor(this.state.referralCount / 5)]}</Card.Body>
                         </Card>
                     </Col>
