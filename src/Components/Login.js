@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import firebase from '../firebase.js';
 
-import {Redirect} from "react-router-dom"
+import { Redirect } from "react-router-dom"
 
 import { auth, googleProvider, database } from "../firebase"
 
@@ -36,7 +36,7 @@ export default class Login extends React.Component {
                         }
                     })
 
-                    if(!userAlreadyExists){
+                    if (!userAlreadyExists) {
                         let new_user_data = {
                             "name": user.displayName,
                             "referrals": 0
@@ -98,10 +98,10 @@ export default class Login extends React.Component {
                     <button onClick={this.handleLogout} >Sign out</button>
                     <button onClick={this.handleGoogleLogin}>Sign in with Google</button>
                     <button onClick={this.creditReferrer}>test</button>
-                            {/* ? <Button variant="outline-info" onClick={this.handleLogout} >Sign out</Button>
+                    {/* ? <Button variant="outline-info" onClick={this.handleLogout} >Sign out</Button>
                             : <Button variant="outline-info" onClick={this.handleGoogleLogin}>Sign in with Google</Button>
                     } */}
-                    </div> : <Redirect to='/home' />}
+                </div> : <Redirect to='/home' />}
             </div>
         )
     }

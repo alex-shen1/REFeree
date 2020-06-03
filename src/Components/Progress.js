@@ -5,7 +5,7 @@ import ProgressBar from "react-bootstrap/ProgressBar";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import {database} from "../firebase"
+import { database } from "../firebase"
 
 const prizes = [
     '10% Discount',
@@ -24,19 +24,19 @@ class Progress extends React.Component {
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.getRefCount();
     }
-    componentDidUpdate(prevProps){
-        if(this.props.activeUser != prevProps.activeUser){
+    componentDidUpdate(prevProps) {
+        if (this.props.activeUser != prevProps.activeUser) {
             this.getRefCount();
         }
     }
 
     getRefCount = () => {
         database.ref(`userData/${this.state.activeUser}`).on("value", snapshot => {
-            if(snapshot && snapshot.exists()){
-                this.setState({referralCount: snapshot.val().referrals});
+            if (snapshot && snapshot.exists()) {
+                this.setState({ referralCount: snapshot.val().referrals });
             }
         })
     }

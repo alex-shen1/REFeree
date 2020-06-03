@@ -47,23 +47,17 @@ class App extends React.Component {
       <div className="app">
         <Router basename={process.env.PUBLIC_URL}>
           <Switch>
+            {/* default path, redirects to login */}
             <Route exact path="/" render={props => {
               return <Redirect to='/login' />
-              // console.log(this)
-              // console.log(this.state)
-              // console.log(this.state.isLoggedIn)
-              // console.log(props);
-              // return this.state.isLoggedIn ?
-              //   <Redirect to='/home' /> :
-              //   <Redirect to='/login' />
             }} />
+
             <Route exact path="/home" render={(props) =>
               <HomePage {...props}
                 activeUser={this.state.activeUser}
                 isLoggedIn={this.state.isLoggedIn}
                 setActiveUser={this.setActiveUser}
               />} />
-
 
             <Route exact path="/about" render={(props) =>
               <AboutPage {...props}
@@ -75,6 +69,7 @@ class App extends React.Component {
                 isLoggedIn={this.state.isLoggedIn}
                 referrer={null} />} />
 
+            {/* generates landing pages for referral links */}
             {Object.keys(sampleData).map(id => {
               return <Route exact path={`/ref/${id}`} render={(props) =>
                 <ReferralLanding {...props} id={id} />} />
