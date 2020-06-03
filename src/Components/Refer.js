@@ -22,10 +22,14 @@ class Refer extends React.Component {
                     <Col>
                         <Card style={{ margin: "0 auto", width: "45vw", height: "25vh", marginTop: "3vh", marginBottom: "3vh", float: "none", marginLeft: "10vw" }}>
                             <Card.Header>
+<<<<<<< Updated upstream
                                 Your Referral Link
+=======
+                                Your Referral Link:
+>>>>>>> Stashed changes
                             </Card.Header>
-                            <Card.Body class="h1 text-center">
-                                UID LINK
+                            <Card.Body class="h3 text-center" style={{ margin: "0 auto", marginTop: "7vh", marginLeft: "3vh", marginRight: "3vh", float: "none" }}>
+                                {`${process.env.PUBLIC_URL}/${this.props.activeUser}`}
                             </Card.Body>
                         </Card>
                     </Col>

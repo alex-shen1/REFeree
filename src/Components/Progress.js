@@ -24,12 +24,19 @@ class Progress extends React.Component {
                         </Card>
                     </Col>
                     <Col>
+<<<<<<< Updated upstream
                         <ProgressBar
                             variant="info"
                             striped now={100 * (this.state.referralCount / this.state.nextPrizeAt)}
                             className='Bar'
                             label={this.state.referralCount}
                         />
+=======
+                        <Card className='Message'>
+                            <Card.Body>You are {5 - this.state.referralCount % 5} referral(s) away from the next prize!!</Card.Body>
+                            <Card.Body>Next Prize: {prizes[Math.floor(this.state.referralCount / 5)]}</Card.Body>
+                        </Card>
+>>>>>>> Stashed changes
                     </Col>
                 </Row>
             </div>
