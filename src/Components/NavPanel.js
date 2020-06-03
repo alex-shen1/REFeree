@@ -23,11 +23,10 @@ class NavPanel extends React.Component {
                     <Navbar.Brand href="#home">REFeree</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="mr-auto">
-                            <Nav.Link href="/home">Home</Nav.Link>
-                            <Nav.Link href="/aboutUs">About Us </Nav.Link>
-                            <Nav.Link href="/faq">FAQ</Nav.Link>
-                        </Nav>
+                        <div>
+                            <Link to='/home'> Home </Link>
+                            <Link to='/about'>About Us</Link>
+                        </div>
                     </Navbar.Collapse>
                 </Navbar>
             </div>
