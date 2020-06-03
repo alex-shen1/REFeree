@@ -13,6 +13,8 @@ import SneakPeak from "./Images/SneakPeak.png";
 
 
 
+import { database } from "../firebase"
+
 const prizes = [
     'Added to the EXCLUSIVE Facebook group',
     'Your own Sneak co. stickers',
@@ -24,9 +26,27 @@ class Progress extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            referralCount: 4,
-            nextPrizeAt: 5
+            referralCount: 0,
+            nextPrizeAt: 5,
+            activeUser: this.props.activeUser
         }
+    }
+
+    componentDidMount() {
+        this.getRefCount();
+    }
+    componentDidUpdate(prevProps) {
+        if (this.props.activeUser !== prevProps.activeUser) {
+            this.getRefCount();
+        }
+    }
+
+    getRefCount = () => {
+        database.ref(`userData/${this.state.activeUser}`).on("value", snapshot => {
+            if (snapshot && snapshot.exists()) {
+                this.setState({ referralCount: snapshot.val().referrals });
+            }
+        })
     }
 
     render() {
@@ -34,7 +54,7 @@ class Progress extends React.Component {
             <div className="progressbar">
                 <Row>
                     <Col>
-                        <Card className='Card'>
+                        <Card className='PCard'>
                             <Card.Title className='Title'>Your Progress</Card.Title>
                             <Card.Body>
                                 <div className='Milestones'>
@@ -72,6 +92,9 @@ class Progress extends React.Component {
                                 </div> */}
 
 
+                                    <div className='Rewards'> {prizes[2]}</div>
+                                    <div className='Rewards'>  {prizes[3]}</div>
+                                </div>
                             </Card.Body>
                         </Card>
 
@@ -80,6 +103,7 @@ class Progress extends React.Component {
                     <Col>
                         <Card className='Message'>
                             <Card.Body>You are {this.state.nextPrizeAt - this.state.referralCount % this.state.nextPrizeAt} referrals away from the next prize!!</Card.Body>
+
                             <Card.Body>Next Prize: {prizes[Math.floor(this.state.referralCount / 5)]}</Card.Body>
                         </Card>
                     </Col>

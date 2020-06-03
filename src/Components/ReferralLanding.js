@@ -8,7 +8,10 @@ export default class ReferralLanding extends Component {
     render() {
         return <div>
             {this.props.id}
-            <Login referrer={this.props.id} setActiveUser={this.props.setActiveUser}/>
+            <Login
+                isLoggedIn={this.props.isLoggedIn}
+                referrer={this.props.id}
+                setActiveUser={this.props.setActiveUser} />
         </div>
     }
 }
