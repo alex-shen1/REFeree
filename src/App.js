@@ -25,19 +25,18 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.loadUserData(); // run in case user is logged in, but page refreshed
-  }
-
-  loadUserData = () => {
+    // run in case user is logged in, but page refreshed
+    // kinda duplicate of in login, might change later
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
-        console.log(user)
-        this.setState({ activeUser: user.uid, isLoggedIn: true })
+        // console.log(user)
+        this.setActiveUser(user.uid)
       } else {
-        // console.log("no user")
       }
     });
   }
+
+  setActiveUser = userID => this.setState({ activeUser: userID, isLoggedIn: userID != null })
 
   resetFirebase = () => {
     Object.keys(sampleData).map(id => {
@@ -71,7 +70,7 @@ class App extends React.Component {
             <Route exact path="/about" component={AboutPage} />
             <Route exact path="/login" render={(props) =>
               <Login {...props}
-                loadUserData={this.loadUserData}
+                setActiveUser={this.setActiveUser}
                 handleGoogleLogin={this.handleGoogleLogin}
                 isLoggedIn={this.state.isLoggedIn}
                 handleLogout={this.handleLogout}

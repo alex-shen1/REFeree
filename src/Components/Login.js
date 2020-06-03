@@ -18,25 +18,52 @@ export default class Login extends React.Component {
     }
 
     handleGoogleLogin = () => {
-        auth.signInWithPopup(googleProvider);
-        auth.getRedirectResult().then(result => {
-            // idk what to do with this
-        }).catch(error => {
-            console.log(error);
-        })
+        auth.signInWithPopup(googleProvider).then(result => {
+            console.log(result)
+            let user = result.user;
+            this.props.setActiveUser(user.uid)
 
-        this.props.loadUserData()
-        if (this.props.referrer != null) {
-            this.creditReferrer()
-        }
+
+            // check if logged user is already in list of all users; if not, initialize their data
+            database.ref("userData").once("value", snapshot => {
+                if (snapshot && snapshot.exists()) {
+                    let userAlreadyExists = false;
+                    Object.keys(snapshot.val()).map(id => {
+                        if (user.uid === id) {
+                            userAlreadyExists = true;
+                        }
+                    })
+
+                    if(!userAlreadyExists){
+                        let new_user_data = {
+                            "name": user.displayName,
+                            "referrals": 0
+                        }
+                        database.ref(`userData/${user.uid}`).set(new_user_data)
+                    }
+                }
+            })
+
+            if (this.props.referrer != null) {
+                this.creditReferrer()
+            }
+
+        }).catch(error => console.log(error));
+
     }
 
+    // accesses and increments by 1
     creditReferrer = () => {
         const id = this.props.referrer;
 
-        database.ref(`userData/${id}`).once("value", snapshot => {
+        const ref = database.ref(`userData/${id}`)
+        ref.once("value", snapshot => {
             if (snapshot && snapshot.exists()) {
-                console.log(snapshot)
+                console.log(snapshot.val())
+                let referrer = snapshot.val()
+                referrer["referrals"]++;
+                console.log(referrer)
+                ref.set(referrer)
             }
         })
     }
@@ -57,11 +84,13 @@ export default class Login extends React.Component {
                             ? <p>Hello, "NAME""</p>
                             : <p>Please sign in.</p>
                     }
-                    {
+                    {/* {
                         this.state.isLoggedIn
                             ? <button onClick={this.handleLogout} >Sign out</button>
                             : <button onClick={this.handleGoogleLogin}>Sign in with Google</button>
-                    }
+                    } */}
+                    <button onClick={this.handleLogout} >Sign out</button>
+                    <button onClick={this.handleGoogleLogin}>Sign in with Google</button>
                     <button onClick={this.creditReferrer}>test</button>
                 </header>
             </div>
