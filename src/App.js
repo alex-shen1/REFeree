@@ -12,7 +12,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-d
 
 import { sampleData } from "./data"
 
-import {auth, database} from "./firebase"
+import { auth, database } from "./firebase"
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -39,9 +39,9 @@ class App extends React.Component {
       }
     });
 
-    database.ref("userData").on("value", snapshot=>{
-      if(snapshot && snapshot.exists()){
-        this.setState({allUsers: Object.keys(snapshot.val())})
+    database.ref("userData").on("value", snapshot => {
+      if (snapshot && snapshot.exists()) {
+        this.setState({ allUsers: Object.keys(snapshot.val()) })
       }
     })
 
@@ -82,7 +82,10 @@ class App extends React.Component {
             {this.state.allUsers ? this.state.allUsers.map(id => {
               console.log(`creating page for ${id}`)
               return <Route exact path={`/ref/${id}`} render={(props) =>
-                <ReferralLanding {...props} id={id} setActiveUser={this.setActiveUser}/>} />
+                <ReferralLanding {...props}
+                  isLoggedIn={this.state.isLoggedIn}
+                  id={id}
+                  setActiveUser={this.setActiveUser} />} />
             }) : ""}
           </Switch>
         </Router>

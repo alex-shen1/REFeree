@@ -47,9 +47,6 @@ export default class Login extends React.Component {
                             this.creditReferrer()
                         }
                     }
-                    // should be moved into the above if later; outside so i don't need to
-                    // recreate account every time for testing
-
                 }
             })
 
