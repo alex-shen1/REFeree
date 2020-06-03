@@ -8,8 +8,10 @@
 }
 
 .carousel {
-    width: 60vw;
-    height: 60vh;
+    width: 40vw;
+    margin:0 auto;
+    margin-bottom: 2vh;
+    float: none;
 }
 
 .Title {
