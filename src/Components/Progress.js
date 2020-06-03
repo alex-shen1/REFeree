@@ -28,7 +28,7 @@ class Progress extends React.Component {
         this.getRefCount();
     }
     componentDidUpdate(prevProps) {
-        if (this.props.activeUser != prevProps.activeUser) {
+        if (this.props.activeUser !== prevProps.activeUser) {
             this.getRefCount();
         }
     }
@@ -46,7 +46,7 @@ class Progress extends React.Component {
             <div className="progressbar">
                 <Row>
                     <Col>
-                        <Card className='Card'>
+                        <Card className='PCard'>
                             <Card.Title className='Title'>Your Progress</Card.Title>
                             <Card.Body>
                                 <div className='Milestones'>
@@ -65,8 +65,8 @@ class Progress extends React.Component {
                                     <div>Rewards</div>
                                     <div className='Rewards'>{prizes[0]}</div>
                                     <div className='Rewards'>{prizes[1]}</div>
-                                    <div className='Rewards'>{prizes[2]}</div>
-                                    <div className='Rewards'>{prizes[3]}</div>
+                                    <div className='Rewards'> {prizes[2]}</div>
+                                    <div className='Rewards'>  {prizes[3]}</div>
                                 </div>
                             </Card.Body>
                         </Card>

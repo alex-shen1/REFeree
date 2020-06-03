@@ -1,17 +1,16 @@
 
-.Card {
+.PCard {
     margin: 0 auto;
     width: 48vw;
     height: 25vh;
     float: none;
     margin: 3vh 0 3vh;
-    margin-left: 15vh;
-    text-align: center;
+    margin-left: 10vw;
 }
 
 .Title {
     margin-top: 2vh;
-    margin-left: 2vh;
+    margin-left: 1vw;
 }
 
 .Milestones {
@@ -20,7 +19,7 @@
 }
 
 .Rewards {
-    margin-left: 6vw;
+    margin-left: 5.8vw;
 }
 
 .ProgressBar {
