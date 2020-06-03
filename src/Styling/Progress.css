@@ -3,7 +3,8 @@
     width: 48vw;
     height: 25vh;
     float: none;
-    margin: 3vh 0 3vh 10vw;
+    margin: 3vh 0 3vh;
+    text-align: center;
 }
 
 .Title {

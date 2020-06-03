@@ -1,6 +1,9 @@
 import React from 'react';
 import '../Styling/Login.css';
 import firebase, { database } from '../firebase.js';
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import firebase from '../firebase.js';
 import 'firebase/auth';
 
 
@@ -79,12 +82,13 @@ export default class Login extends React.Component {
 
     render() {
         return (
+
             <div className="App">
                 <header className="App-header">
                     {
                         this.state.isLoggedIn
-                            ? <p>Hello, "NAME""</p>
-                            : <p>Please sign in.</p>
+                            ? <Card bg="secondary" text="light" style={{ margin: "0 auto", width: "10vw", height: "5vh", marginTop: "3vh", marginBottom: "3vh", float: "none" }}>Hello, "NAME"</Card>
+                            : <Card bg="secondary" text="light" style={{ margin: "0 auto", width: "10vw", height: "5vh", marginTop: "3vh", marginBottom: "3vh", float: "none" }}>Please sign in.</Card>
                     }
                     {/* {
                         this.state.isLoggedIn
@@ -94,6 +98,9 @@ export default class Login extends React.Component {
                     <button onClick={this.handleLogout} >Sign out</button>
                     <button onClick={this.handleGoogleLogin}>Sign in with Google</button>
                     <button onClick={this.creditReferrer}>test</button>
+                            {/* ? <Button variant="outline-info" onClick={this.handleLogout} >Sign out</Button>
+                            : <Button variant="outline-info" onClick={this.handleGoogleLogin}>Sign in with Google</Button>
+                    } */}
                 </header>
             </div>
         )
