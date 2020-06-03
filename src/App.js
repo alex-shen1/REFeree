@@ -12,8 +12,8 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-d
 
 import { sampleData } from "./data"
 
+import {auth, database} from "./firebase"
 
-import firebase from "./firebase"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -22,13 +22,14 @@ class App extends React.Component {
     super(props);
     this.state = {
       activeUser: null, // UID of current user
-      isLoggedIn: false
+      isLoggedIn: false,
+      allUsers: null,
     }
   }
 
   componentDidMount() {
     // run in case user is logged in, but page refreshed
-    firebase.auth().onAuthStateChanged(user => {
+    auth.onAuthStateChanged(user => {
       if (user) {
         console.log(user)
         // this.setState({ activeUser: user.uid, isLoggedIn: true })
@@ -37,6 +38,14 @@ class App extends React.Component {
         console.log("no user")
       }
     });
+
+    database.ref("userData").on("value", snapshot=>{
+      if(snapshot && snapshot.exists()){
+        this.setState({allUsers: Object.keys(snapshot.val())})
+      }
+    })
+
+
   }
 
   setActiveUser = userID => this.setState({ activeUser: userID, isLoggedIn: (userID != null) })
@@ -70,10 +79,11 @@ class App extends React.Component {
                 referrer={null} />} />
 
             {/* generates landing pages for referral links */}
-            {Object.keys(sampleData).map(id => {
+            {this.state.allUsers ? this.state.allUsers.map(id => {
+              console.log(`creating page for ${id}`)
               return <Route exact path={`/ref/${id}`} render={(props) =>
-                <ReferralLanding {...props} id={id} />} />
-            })}
+                <ReferralLanding {...props} id={id} setActiveUser={this.setActiveUser}/>} />
+            }) : ""}
           </Switch>
         </Router>
 

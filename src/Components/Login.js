@@ -42,12 +42,14 @@ export default class Login extends React.Component {
                             "referrals": 0
                         }
                         database.ref(`userData/${user.uid}`).set(new_user_data)
+
+                        if (this.props.referrer != null) {
+                            this.creditReferrer()
+                        }
                     }
                     // should be moved into the above if later; outside so i don't need to
                     // recreate account every time for testing
-                    if (this.props.referrer != null) {
-                        this.creditReferrer()
-                    }
+
                 }
             })
 
@@ -97,7 +99,7 @@ export default class Login extends React.Component {
                     } */}
                     <button onClick={this.handleLogout} >Sign out</button>
                     <button onClick={this.handleGoogleLogin}>Sign in with Google</button>
-                    <button onClick={this.creditReferrer}>test</button>
+                    <button onClick={this.creditReferrer}>test giving points</button>
                     {/* ? <Button variant="outline-info" onClick={this.handleLogout} >Sign out</Button>
                             : <Button variant="outline-info" onClick={this.handleGoogleLogin}>Sign in with Google</Button>
                     } */}
