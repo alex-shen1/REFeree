@@ -1,10 +1,11 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 
-function withLogin(Component) {
-    return class WithLogin extends React.Component {
+import { auth, googleProvider } from "../firebase"
 
-        render() {
-            return <Component {...this.props} {...this.state} />
-        }
-    }
+export function login(referrer) {
+    useEffect(() => {
+        console.log(referrer);
+    }, [referrer]);
+
+    return "";
 }

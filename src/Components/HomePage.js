@@ -11,7 +11,7 @@ export default class HomePage extends Component {
         return <div className="homepage">
             <NavPanel />
             <Progress />
-            <Refer />
+            <Refer activeUser={this.props.activeUser} />
         </div>
     }
 }

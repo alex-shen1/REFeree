@@ -15,7 +15,7 @@ class Refer extends React.Component {
     render() {
         return (
             <div className="ref">
-                Refer a friend: <br />
+                Refer a friend: {this.props.activeUser} <br />
                 Email
             </div>
         )
