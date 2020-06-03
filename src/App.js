@@ -5,12 +5,13 @@ import Progress from './Components/Progress.js';
 import AboutPage from './Components/AboutPage.js';
 import HomePage from "./Components/HomePage"
 import Login from "./Components/Login"
-
+import ReferralLanding from "./Components/ReferralLanding"
 import Refer from './Components/Refer.js';
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
+import { sampleData } from "./data"
 
-import firebase from "./firebase"
+import firebase, { database } from "./firebase"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -37,6 +38,12 @@ class App extends React.Component {
   //     }
   //   });
   // }
+
+  resetFirebase = () => {
+    Object.keys(sampleData).map(id => {
+      database.ref(`userData/${id}`).set(sampleData[id])
+    })
+  }
 
   test = () => {
     console.log(this.state.activeUser)
@@ -66,6 +73,10 @@ class App extends React.Component {
                 handleGoogleLogin={this.handleGoogleLogin}
                 isLoggedIn={this.state.isLoggedIn}
                 handleLogout={this.handleLogout} />} />
+            {Object.keys(sampleData).map(id => {
+              return <Route exact path={`/ref/${id}`} render={(props) =>
+                <ReferralLanding {...props} id={id} />} />
+            })}
           </Switch>
         </Router> */}
 
@@ -83,6 +94,7 @@ class App extends React.Component {
         <button onClick={this.loadUserData}>Print user</button>
         {/* <button onClick={()=>auth.signOut()}>Sign out</button> */}
         {/* <button onClick={this.test}>TEST</button> */}
+        <button onClick={this.resetFirebase}>reset firebase</button>
       </div>
 
     )

@@ -1,6 +1,8 @@
 import React from 'react';
 import '../Styling/Refer.css';
 import Card from "react-bootstrap/Card";
+import { database } from "../firebase";
+
 
 class Refer extends React.Component {
     constructor(props) {
@@ -11,7 +13,6 @@ class Refer extends React.Component {
     }
 
     render() {
-
         return (
             <div className="ref">
                 Refer a friend: <br />
