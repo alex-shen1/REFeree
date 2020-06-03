@@ -3,5 +3,10 @@ export const sampleData = {
         firstName: "Alex",
         lastName: "Shen",
         referrals: 2
+    },
+    "kcEgNwSW3ZN10k8BwXJG0fPxylr2": {
+        firstName: "Alan",
+        lastName: "Li", 
+        referrals: 3
     }
 }
