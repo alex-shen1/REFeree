@@ -16,10 +16,17 @@ import SneakPeak from "./Images/SneakPeak.png";
 import { database } from "../firebase"
 
 const prizes = [
-    'Added to the EXCLUSIVE Facebook group',
-    'Your own Sneak co. stickers',
-    'Your own Sneak co. T-shirt',
-    'A free pair of shoes from our not-yet-released collection',
+    'Facebook group',
+    'Sneak co. stickers',
+    'Sneak co. T-shirt',
+    'Unreleased shoes',
+]
+
+const longerPrizes = [
+    'being added to the exclusive Facebook Group',
+    'getting custom Sneak co. stickers in the mail',
+    'receiving a custom  Sneak co. T-shirt',
+    'receiving your own pair of not-yet-released Sneak co. sneakers'
 ]
 
 class Progress extends React.Component {
@@ -69,44 +76,44 @@ class Progress extends React.Component {
                                     className='ProgressBar'
                                     label={this.state.referralCount}
                                 />
-                                <Carousel className="carousel">
-                                    <Carousel.Item>
-                                        <img src={FacebookGroup} alt="FaceBookGroup" />
-                                    </Carousel.Item>
-                                    <Carousel.Item>
-                                        <img src={Sticker} alt="Sticker" />
-                                    </Carousel.Item>
-                                    <Carousel.Item>
-                                        <img src={Tshirt} alt="T-Shirt" />
-                                    </Carousel.Item>
-                                    <Carousel.Item>
-                                        <img src={SneakPeak} alt="Sneaker" />
-                                    </Carousel.Item>
-                                </Carousel>
-                                {/* <div className='Milestones'>
-                                    <div>Rewards</div>
-                                    <div className='Rewards'>{prizes[0]}</div>
-                                    <div className='Rewards'>{prizes[1]}</div>
-                                    <div className='Rewards'>{prizes[2]}</div>
-                                    <div className='Rewards'>{prizes[3]}</div>
-                                </div> */}
 
-                                <div>
-                                    <div className='Rewards'> {prizes[2]}</div>
-                                    <div className='Rewards'>  {prizes[3]}</div>
+
+                                <div className='Milestones'>
+                                    <div>Rewards</div>
+                                    <div style={{ marginLeft: '3vw' }} className='Rewards'>{prizes[0]}</div>
+                                    <div style={{ marginLeft: '3vw' }} className='Rewards'>{prizes[1]}</div>
+                                    <div style={{ marginLeft: '3vw' }} className='Rewards'>{prizes[2]}</div>
+                                    <div style={{ marginLeft: '3vw' }} className='Rewards'>{prizes[3]}</div>
                                 </div>
                             </Card.Body>
-                        </Card>
 
+                        </Card>
                     </Col>
 
                     <Col>
                         <Card className='Message'>
-                            <Card.Body>You are {this.state.nextPrizeAt - this.state.referralCount % this.state.nextPrizeAt} referrals away from the next prize!!</Card.Body>
-
-                            <Card.Body>Next Prize: {prizes[Math.floor(this.state.referralCount / 5)]}</Card.Body>
+                            <Card.Body>You are {this.state.nextPrizeAt - this.state.referralCount % this.state.nextPrizeAt} referrals away from the next prize,
+                                which is {longerPrizes[Math.floor(this.state.referralCount / 5)]}!!</Card.Body>
                         </Card>
                     </Col>
+                </Row>
+                <Row>
+                    <div className="carousel">
+                        <Carousel>
+                            <Carousel.Item>
+                                <img class="d-block mx-auto" src={FacebookGroup} alt="FaceBookGroup" />
+                            </Carousel.Item>
+                            <Carousel.Item>
+                                <img class="d-block mx-auto" src={Sticker} alt="Sticker" />
+                            </Carousel.Item>
+                            <Carousel.Item>
+                                <img class="d-block mx-auto" src={Tshirt} alt="T-Shirt" />
+                            </Carousel.Item>
+                            <Carousel.Item>
+                                <img class="d-block mx-auto" src={SneakPeak} alt="Sneaker" />
+                            </Carousel.Item>
+                        </Carousel>
+                    </div>
                 </Row>
             </div>
         )

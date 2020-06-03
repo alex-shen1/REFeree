@@ -122,9 +122,7 @@ export default class Login extends React.Component {
                         this.props.isLoggedIn
 
                             ? <Button variant="outline-info" onClick={this.handleLogout} >Sign out</Button>
-
-                            // ? <button onClick={this.handleLogout} >Sign out</button>
-                            : <button onClick={this.handleGoogleLogin}>Sign in with Google</button>
+                            : ""
                     }
                     {/* <button onClick={this.handleLogout} >Sign out</button>
                     <button onClick={this.handleGoogleLogin}>Sign in with Google</button>
