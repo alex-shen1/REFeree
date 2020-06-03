@@ -4,12 +4,20 @@ import Card from "react-bootstrap/Card";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Carousel from "react-bootstrap/Carousel";
+
+import FacebookGroup from "./Images/FacebookGroup.png";
+import Sticker from "./Images/Sticker.png";
+import Tshirt from "./Images/Tshirt.png";
+import SneakPeak from "./Images/SneakPeak.png";
+
+
 
 const prizes = [
-    '10% Discount',
-    '20% Discount',
-    '30% Discount',
-    '50% Discount',
+    'Added to the EXCLUSIVE Facebook group',
+    'Your own Sneak co. stickers',
+    'Your own Sneak co. T-shirt',
+    'A free pair of shoes from our not-yet-released collection',
 ]
 
 class Progress extends React.Component {
@@ -31,29 +39,47 @@ class Progress extends React.Component {
                             <Card.Body>
                                 <div className='Milestones'>
                                     <div>0</div>
-                                    <div style={{ marginLeft: '9vw' }}>5</div>
-                                    <div style={{ marginLeft: '9vw' }}>10</div>
-                                    <div style={{ marginLeft: '9vw' }}>15</div>
-                                    <div style={{ marginLeft: '9vw' }}>20</div>
+                                    <div style={{ marginLeft: '8vw' }}>10</div>
+                                    <div style={{ marginLeft: '8vw' }}>25</div>
+                                    <div style={{ marginLeft: '8vw' }}>50</div>
+                                    <div style={{ marginLeft: '8vw' }}>100</div>
                                 </div>
                                 <ProgressBar
-                                    striped now={100 * (this.state.referralCount / 20)}
+                                    striped now={this.state.referralCount}
                                     className='ProgressBar'
                                     label={this.state.referralCount}
                                 />
-                                <div className='Milestones'>
+                                <Carousel className="carousel">
+                                    <Carousel.Item>
+                                        <img src={FacebookGroup} alt="FaceBookGroup" />
+                                    </Carousel.Item>
+                                    <Carousel.Item>
+                                        <img src={Sticker} alt="Sticker" />
+                                    </Carousel.Item>
+                                    <Carousel.Item>
+                                        <img src={Tshirt} alt="T-Shirt" />
+                                    </Carousel.Item>
+                                    <Carousel.Item>
+                                        <img src={SneakPeak} alt="Sneaker" />
+                                    </Carousel.Item>
+                                </Carousel>
+                                {/* <div className='Milestones'>
                                     <div>Rewards</div>
                                     <div className='Rewards'>{prizes[0]}</div>
                                     <div className='Rewards'>{prizes[1]}</div>
                                     <div className='Rewards'>{prizes[2]}</div>
                                     <div className='Rewards'>{prizes[3]}</div>
-                                </div>
+                                </div> */}
+
+
                             </Card.Body>
                         </Card>
+
                     </Col>
+
                     <Col>
                         <Card className='Message'>
-                            <Card.Body>You are {5 - this.state.referralCount % 5} referrals away from the next prize!!</Card.Body>
+                            <Card.Body>You are {this.state.nextPrizeAt - this.state.referralCount % this.state.nextPrizeAt} referrals away from the next prize!!</Card.Body>
                             <Card.Body>Next Prize: {prizes[Math.floor(this.state.referralCount / 5)]}</Card.Body>
                         </Card>
                     </Col>
