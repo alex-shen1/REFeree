@@ -1,16 +1,32 @@
 .Card {
     margin: 0 auto;
-    width: 45vw;
+    width: 48vw;
     height: 25vh;
     float: none;
     margin: 3vh 0 3vh 10vw;
 }
 
-.Bar {
-    margin: 0 auto;
-    margin-top: 3vh;
+.Title {
+    margin-top:2vh;
+    margin-left: 2vh;
+}
+
+.Milestones {
+    width: 40vw;
+    display: flex;
+}
+
+.Rewards {
+    margin-left: 6vw;
+}
+
+.ProgressBar {
     width: 40vw;
     float: none;
+}
+
+.Bar {
+    max-width: 10vw;
 }
 
 .Message {

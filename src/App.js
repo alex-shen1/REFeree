@@ -33,6 +33,7 @@ class App extends React.Component {
         // console.log(user)
         this.setActiveUser(user.uid)
       } else {
+        console.log("no user")
       }
     });
 
@@ -87,7 +88,8 @@ class App extends React.Component {
                   setActiveUser={this.setActiveUser} />} />
             }) : ""}
           </Switch>
-        </Router>
+        </Router> */}
+
 
         {/* <button onClick={this.handleGoogleLogin}>Log in w/ google</button> */}
         <button onClick={this.loadUserData}>Print user</button>
