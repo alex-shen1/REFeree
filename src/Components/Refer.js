@@ -21,6 +21,7 @@ class Refer extends React.Component {
 
     componentDidMount() {
         this.setState({ activeUser: this.props.activeUser })
+        console.log(this.props.activeUser)
     }
     render() {
         return (
@@ -29,7 +30,7 @@ class Refer extends React.Component {
                     <Col>
                         <Card style={{ margin: "0 auto", width: "45vw", height: "25vh", marginTop: "3vh", marginBottom: "3vh", float: "none", marginLeft: "10vw" }}>
                             <Card.Header>
-                                Your Referral Link: {`${process.env.PUBLIC_URL}/${this.state.activeUser}`}
+                                Your Referral Link: {`alex-shen1.github.io/REFERee/ref/${this.state.activeUser}`}
                             </Card.Header>
                             <Card.Body class="h1 text-center">
                                 UID LINK
