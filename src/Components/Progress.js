@@ -91,7 +91,7 @@ class Progress extends React.Component {
                                     <div className='Rewards'>{prizes[3]}</div>
                                 </div> */}
 
-
+                                <div>
                                     <div className='Rewards'> {prizes[2]}</div>
                                     <div className='Rewards'>  {prizes[3]}</div>
                                 </div>
