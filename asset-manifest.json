@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/REFeree/static/css/main.817b4437.chunk.css",
-    "main.js": "/REFeree/static/js/main.b500f692.chunk.js",
-    "main.js.map": "/REFeree/static/js/main.b500f692.chunk.js.map",
-    "runtime-main.js": "/REFeree/static/js/runtime-main.91ee6249.js",
-    "runtime-main.js.map": "/REFeree/static/js/runtime-main.91ee6249.js.map",
-    "static/css/2.af3c1da9.chunk.css": "/REFeree/static/css/2.af3c1da9.chunk.css",
-    "static/js/2.d9387b23.chunk.js": "/REFeree/static/js/2.d9387b23.chunk.js",
-    "static/js/2.d9387b23.chunk.js.map": "/REFeree/static/js/2.d9387b23.chunk.js.map",
-    "index.html": "/REFeree/index.html",
-    "precache-manifest.9c8ca306b9f8de6a7cc650b05a80be4e.js": "/REFeree/precache-manifest.9c8ca306b9f8de6a7cc650b05a80be4e.js",
-    "service-worker.js": "/REFeree/service-worker.js",
-    "static/css/2.af3c1da9.chunk.css.map": "/REFeree/static/css/2.af3c1da9.chunk.css.map",
-    "static/css/main.817b4437.chunk.css.map": "/REFeree/static/css/main.817b4437.chunk.css.map",
-    "static/js/2.d9387b23.chunk.js.LICENSE.txt": "/REFeree/static/js/2.d9387b23.chunk.js.LICENSE.txt"
+    "main.css": "/REFERee/static/css/main.d36d19a0.chunk.css",
+    "main.js": "/REFERee/static/js/main.0543854c.chunk.js",
+    "main.js.map": "/REFERee/static/js/main.0543854c.chunk.js.map",
+    "runtime-main.js": "/REFERee/static/js/runtime-main.6912d1f7.js",
+    "runtime-main.js.map": "/REFERee/static/js/runtime-main.6912d1f7.js.map",
+    "static/css/2.af3c1da9.chunk.css": "/REFERee/static/css/2.af3c1da9.chunk.css",
+    "static/js/2.a3f0916c.chunk.js": "/REFERee/static/js/2.a3f0916c.chunk.js",
+    "static/js/2.a3f0916c.chunk.js.map": "/REFERee/static/js/2.a3f0916c.chunk.js.map",
+    "index.html": "/REFERee/index.html",
+    "precache-manifest.3be5fe474999186701f37e7c08d3ff32.js": "/REFERee/precache-manifest.3be5fe474999186701f37e7c08d3ff32.js",
+    "service-worker.js": "/REFERee/service-worker.js",
+    "static/css/2.af3c1da9.chunk.css.map": "/REFERee/static/css/2.af3c1da9.chunk.css.map",
+    "static/css/main.d36d19a0.chunk.css.map": "/REFERee/static/css/main.d36d19a0.chunk.css.map",
+    "static/js/2.a3f0916c.chunk.js.LICENSE.txt": "/REFERee/static/js/2.a3f0916c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.91ee6249.js",
+    "static/js/runtime-main.6912d1f7.js",
     "static/css/2.af3c1da9.chunk.css",
-    "static/js/2.d9387b23.chunk.js",
-    "static/css/main.817b4437.chunk.css",
-    "static/js/main.b500f692.chunk.js"
+    "static/js/2.a3f0916c.chunk.js",
+    "static/css/main.d36d19a0.chunk.css",
+    "static/js/main.0543854c.chunk.js"
   ]
 }
