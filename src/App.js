@@ -65,14 +65,17 @@ class App extends React.Component {
               //   <Redirect to='/home' /> :
               //   <Redirect to='/login' />
             }} />
-            <Route exact path="/home" component={HomePage} />
+            <Route exact path="/home" render={(props) =>
+              <HomePage {...props}
+                activeUser={this.state.activeUser} />} />
             <Route exact path="/about" component={AboutPage} />
             <Route exact path="/login" render={(props) =>
               <Login {...props}
                 loadUserData={this.loadUserData}
                 handleGoogleLogin={this.handleGoogleLogin}
                 isLoggedIn={this.state.isLoggedIn}
-                handleLogout={this.handleLogout} />} />
+                handleLogout={this.handleLogout}
+                referrer={null} />} />
             {Object.keys(sampleData).map(id => {
               return <Route exact path={`/ref/${id}`} render={(props) =>
                 <ReferralLanding {...props} id={id} />} />

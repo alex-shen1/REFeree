@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Styling/Login.css';
-import firebase from '../firebase.js';
+import firebase, { database } from '../firebase.js';
 import 'firebase/auth';
 
 
@@ -10,7 +10,6 @@ export default class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-
         }
     }
 
@@ -27,14 +26,27 @@ export default class Login extends React.Component {
         })
 
         this.props.loadUserData()
+        if (this.props.referrer != null) {
+            this.creditReferrer()
+        }
     }
+
+    creditReferrer = () => {
+        const id = this.props.referrer;
+
+        database.ref(`userData/${id}`).once("value", snapshot => {
+            if (snapshot && snapshot.exists()) {
+                console.log(snapshot)
+            }
+        })
+    }
+
 
     handleLogout = () => {
         console.log("logging out")
         this.setState({ isLoggedIn: false, activeUser: null })
         auth.signOut()
     }
-
 
     render() {
         return (
@@ -50,6 +62,7 @@ export default class Login extends React.Component {
                             ? <button onClick={this.handleLogout} >Sign out</button>
                             : <button onClick={this.handleGoogleLogin}>Sign in with Google</button>
                     }
+                    <button onClick={this.creditReferrer}>test</button>
                 </header>
             </div>
         )
