@@ -11,7 +11,6 @@ class Progress extends React.Component {
         this.state = {
             referralCount: 4,
             nextPrizeAt: 5
-
         }
     }
 
@@ -22,7 +21,11 @@ class Progress extends React.Component {
                     <Col>
                         <Card className='Card' >
                             <Card.Body>
-                                <ProgressBar striped now={100 * (this.state.referralCount / this.state.nextPrizeAt)} style={{ margin: "0 auto", marginTop: "3vh", width: "40vw", float: "none" }} />
+                                <ProgressBar
+                                    striped now={100 * (this.state.referralCount / this.state.nextPrizeAt)}
+                                    className='Bar'
+                                    label={this.state.referralCount}
+                                />
                             </Card.Body>
                         </Card>
                     </Col>

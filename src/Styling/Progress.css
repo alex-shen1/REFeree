@@ -5,3 +5,10 @@
     float: none;
     margin: 3vh 0 3vh 10vw;
 }
+
+.Bar {
+    margin: 0 auto;
+    margin-top: 3vh;
+    width: 40vw;
+    float: none;
+}
