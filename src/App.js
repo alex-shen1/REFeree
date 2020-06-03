@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-d
 
 import { sampleData } from "./data"
 
-import firebase, { database } from "./firebase"
+import firebase, { database, auth } from "./firebase"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -52,9 +52,19 @@ class App extends React.Component {
     })
   }
 
-  test = () => {
-    console.log(this.state.activeUser)
+  printUser = () => {
+    auth.onAuthStateChanged(function (user) {
+      if (user) {
+        // id = user.uid
+        // this.setState({ activeUser: user.uid })
+        console.log(user)
+      } else {
+        // No user is signed in.
+        console.log("no user")
+      }
+    });
   }
+
 
   render() {
 
@@ -63,7 +73,7 @@ class App extends React.Component {
         <Router basename={process.env.PUBLIC_URL}>
           <Switch>
             <Route exact path="/" render={props => {
-              return <Redirect to='/home' />
+              return <Redirect to='/login' />
               // console.log(this)
               // console.log(this.state)
               // console.log(this.state.isLoggedIn)
@@ -73,8 +83,8 @@ class App extends React.Component {
               //   <Redirect to='/login' />
             }} />
             <Route exact path="/home" render={(props) =>
-              <HomePage {...props}
-                activeUser={this.state.activeUser} />} />
+              <HomePage {...props} 
+              activeUser={this.state.activeUser}/>} />
             <Route exact path="/about" component={AboutPage} />
             <Route exact path="/login" render={(props) =>
               <Login {...props}
@@ -88,11 +98,11 @@ class App extends React.Component {
                   setActiveUser={this.setActiveUser} />} />
             }) : ""}
           </Switch>
-        </Router> */}
+        </Router>
 
 
         {/* <button onClick={this.handleGoogleLogin}>Log in w/ google</button> */}
-        <button onClick={this.loadUserData}>Print user</button>
+        <button onClick={this.printUser}>Print user</button>
         {/* <button onClick={()=>auth.signOut()}>Sign out</button> */}
         {/* <button onClick={this.test}>TEST</button> */}
         <button onClick={this.resetFirebase}>reset firebase</button>

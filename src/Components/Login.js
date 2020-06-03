@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import firebase from '../firebase.js';
 
+import {Redirect} from "react-router-dom"
 
 import { auth, googleProvider, database } from "../firebase"
 
@@ -75,14 +76,15 @@ export default class Login extends React.Component {
     handleLogout = () => {
         console.log("logging out")
         this.setState({ isLoggedIn: false, activeUser: null })
+        this.props.setActiveUser(null)
         auth.signOut()
     }
 
     render() {
         return (
 
-            <div className="App">
-                <header className="App-header">
+            <div className="login">
+                {!this.props.isLoggedIn ? <div>
                     {
                         this.state.isLoggedIn
                             ? <Card bg="secondary" text="light" style={{ margin: "0 auto", width: "10vw", height: "5vh", marginTop: "3vh", marginBottom: "3vh", float: "none" }}>Hello, "NAME"</Card>
@@ -99,7 +101,7 @@ export default class Login extends React.Component {
                             {/* ? <Button variant="outline-info" onClick={this.handleLogout} >Sign out</Button>
                             : <Button variant="outline-info" onClick={this.handleGoogleLogin}>Sign in with Google</Button>
                     } */}
-                </header>
+                    </div> : <Redirect to='/home' />}
             </div>
         )
     }
