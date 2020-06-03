@@ -27,23 +27,19 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.loadUserData(); // run in case user is logged in, but page refreshed
-  }
-
-  loadUserData = () => {
+    // run in case user is logged in, but page refreshed
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
         console.log(user)
-        this.setState({ activeUser: user.uid, isLoggedIn: true })
+        // this.setState({ activeUser: user.uid, isLoggedIn: true })
+        this.setActiveUser(user.uid)
       } else {
         console.log("no user")
       }
     });
   }
 
-  test = () => {
-    console.log(this.state.activeUser)
-  }
+  setActiveUser = userID => this.setState({ activeUser: userID, isLoggedIn: (userID != null) })
 
   render() {
 
@@ -63,18 +59,22 @@ class App extends React.Component {
             }} />
             <Route exact path="/home" render={(props) =>
               <HomePage {...props}
-              activeUser={this.state.activeUser}
+                activeUser={this.state.activeUser}
+                isLoggedIn={this.state.isLoggedIn}
+                setActiveUser={this.setActiveUser}
               />} />
 
 
-            <Route exact path="/about" component={AboutPage} />
+            <Route exact path="/about" render={(props) =>
+              <AboutPage {...props}
+                isLoggedIn={this.state.isLoggedIn} />} />
 
             <Route exact path="/login" render={(props) =>
               <Login {...props}
-                loadUserData={this.loadUserData}
-                handleGoogleLogin={this.handleGoogleLogin}
+                setActiveUser={this.setActiveUser}
                 isLoggedIn={this.state.isLoggedIn}
-                handleLogout={this.handleLogout} />} />
+                referrer={null} />} />
+
             {Object.keys(sampleData).map(id => {
               return <Route exact path={`/ref/${id}`} render={(props) =>
                 <ReferralLanding {...props} id={id} />} />
@@ -85,7 +85,6 @@ class App extends React.Component {
         {/* <button onClick={this.handleGoogleLogin}>Log in w/ google</button> */}
         <button onClick={this.loadUserData}>Print user</button>
         {/* <button onClick={()=>auth.signOut()}>Sign out</button> */}
-        {/* <button onClick={this.test}>TEST</button> */}
       </div>
 
     )

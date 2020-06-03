@@ -4,6 +4,8 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import NavPanel from './NavPanel';
 
+import {Redirect} from "react-router-dom"
+
 const questions = [
     {
         q: 'How can I refer my friends?',
