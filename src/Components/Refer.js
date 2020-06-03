@@ -4,17 +4,24 @@ import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import { database } from "../firebase";
-
+import { database, auth } from "../firebase";
 
 class Refer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            activeUser: null
+        }
+    }
+    componentDidUpdate(prevProps) {
+        if (this.props.activeUser != prevProps.activeUser) {
+            this.setState({ activeUser: this.props.activeUser })
         }
     }
 
+    componentDidMount() {
+        this.setState({ activeUser: this.props.activeUser })
+    }
     render() {
         return (
             <div className="ref">
@@ -22,7 +29,7 @@ class Refer extends React.Component {
                     <Col>
                         <Card style={{ margin: "0 auto", width: "45vw", height: "25vh", marginTop: "3vh", marginBottom: "3vh", float: "none", marginLeft: "10vw" }}>
                             <Card.Header>
-                                Your Referral Link: {`${process.env.PUBLIC_URL}/${this.props.activeUser}`}
+                                Your Referral Link: {`${process.env.PUBLIC_URL}/${this.state.activeUser}`}
                             </Card.Header>
                             <Card.Body class="h1 text-center">
                                 UID LINK
