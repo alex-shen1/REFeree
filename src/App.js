@@ -7,7 +7,7 @@ import HomePage from "./Components/HomePage"
 import Login from "./Components/Login"
 import ReferralLanding from "./Components/ReferralLanding"
 import Refer from './Components/Refer.js';
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import { HashRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
 
 import { sampleData } from "./data"
