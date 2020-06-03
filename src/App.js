@@ -19,8 +19,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // activeUser: null, // UID of current user
-      // isLoggedIn: false
+      activeUser: null, // UID of current user
+      isLoggedIn: false
     }
   }
 
@@ -28,16 +28,16 @@ class App extends React.Component {
     this.loadUserData(); // run in case user is logged in, but page refreshed
   }
 
-  // loadUserData = () => {
-  //   firebase.auth().onAuthStateChanged(user => {
-  //     if (user) {
-  //       console.log(user)
-  //       this.setState({ activeUser: user.uid, isLoggedIn: true })
-  //     } else {
-  //       console.log("no user")
-  //     }
-  //   });
-  // }
+  loadUserData = () => {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        console.log(user)
+        this.setState({ activeUser: user.uid, isLoggedIn: true })
+      } else {
+        console.log("no user")
+      }
+    });
+  }
 
   resetFirebase = () => {
     Object.keys(sampleData).map(id => {
@@ -80,15 +80,6 @@ class App extends React.Component {
           </Switch>
         </Router> */}
 
-        {/* <Login />
-        <HomePage /> */}
-
-        <Router>
-          <Switch>
-            <Route path='/' component={Login} />
-            <Route path='/home' component={HomePage} />
-          </Switch>
-        </Router>
 
         {/* <button onClick={this.handleGoogleLogin}>Log in w/ google</button> */}
         <button onClick={this.loadUserData}>Print user</button>
