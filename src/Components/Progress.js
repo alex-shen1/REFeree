@@ -19,20 +19,17 @@ class Progress extends React.Component {
             <div className="progressbar">
                 <Row>
                     <Col>
-                        <Card className='Card' >
-                            <Card.Body>
-                                <ProgressBar
-                                    striped now={100 * (this.state.referralCount / this.state.nextPrizeAt)}
-                                    className='Bar'
-                                    label={this.state.referralCount}
-                                />
-                            </Card.Body>
+                        <Card className="Card" style={{ margin: "0 auto", width: "30vw", height: "25vh", marginTop: "3vh", marginBottom: "3vh", float: "none" }}>
+                            <Card.Body>You are __ referrals away!</Card.Body>
                         </Card>
                     </Col>
                     <Col>
-                        <Card style={{ margin: "0 auto", width: "30vw", height: "25vh", marginTop: "3vh", marginBottom: "3vh", float: "none" }}>
-                            <Card.Body>You are __ referrals away!</Card.Body>
-                        </Card>
+                        <ProgressBar
+                            variant="info"
+                            striped now={100 * (this.state.referralCount / this.state.nextPrizeAt)}
+                            className='Bar'
+                            label={this.state.referralCount}
+                        />
                     </Col>
                 </Row>
             </div>

@@ -10,8 +10,8 @@ export default class HomePage extends Component {
     render() {
         return <div className="homepage">
             <NavPanel />
-            <Progress />
             <Refer />
+            <Progress />
         </div>
     }
 }
