@@ -20,7 +20,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       activeUser: null, // UID of current user
-      isLoggedIn: false
+      isLoggedIn: false,
+      allUsers: null
     }
   }
 
@@ -34,6 +35,12 @@ class App extends React.Component {
       } else {
       }
     });
+
+    database.ref("userData").on("value", snapshot => {
+      if (snapshot && snapshot.exists()) {
+        this.setState({ allUsers: Object.keys(snapshot.val()) })
+      }
+    })
   }
 
   setActiveUser = userID => this.setState({ activeUser: userID, isLoggedIn: userID != null })
@@ -71,14 +78,14 @@ class App extends React.Component {
             <Route exact path="/login" render={(props) =>
               <Login {...props}
                 setActiveUser={this.setActiveUser}
-                handleGoogleLogin={this.handleGoogleLogin}
                 isLoggedIn={this.state.isLoggedIn}
-                handleLogout={this.handleLogout}
                 referrer={null} />} />
-            {Object.keys(sampleData).map(id => {
+            {this.state.allUsers != null ? this.state.allUsers.map(id => {
               return <Route exact path={`/ref/${id}`} render={(props) =>
-                <ReferralLanding {...props} id={id} />} />
-            })}
+                <ReferralLanding {...props}
+                  id={id}
+                  setActiveUser={this.setActiveUser} />} />
+            }) : ""}
           </Switch>
         </Router>
 

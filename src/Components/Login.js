@@ -41,18 +41,20 @@ export default class Login extends React.Component {
                         }
                         database.ref(`userData/${user.uid}`).set(new_user_data)
                     }
+                    // should be moved into the above if later; outside so i don't need to
+                    // recreate account every time for testing
+                    if (this.props.referrer != null) {
+                        this.creditReferrer()
+                    }
                 }
             })
 
-            if (this.props.referrer != null) {
-                this.creditReferrer()
-            }
+
 
         }).catch(error => console.log(error));
-
     }
 
-    // accesses and increments by 1
+    // accesses referrer's referrals and increments by 1
     creditReferrer = () => {
         const id = this.props.referrer;
 
