@@ -51,7 +51,7 @@ class App extends React.Component {
   setActiveUser = userID => this.setState({ activeUser: userID, isLoggedIn: (userID != null) })
 
   render() {
-
+    // console.log(process.env)
     return (
       <div className="app">
         <Router basename={process.env.PUBLIC_URL}>
