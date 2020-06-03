@@ -21,6 +21,7 @@ class Refer extends React.Component {
 
     componentDidMount() {
         this.setState({ activeUser: this.props.activeUser })
+        console.log(this.props.activeUser)
     }
     render() {
         return (

@@ -14,9 +14,9 @@ export default class HomePage extends Component {
     }
     render() {
         return <div className="homepage">
-            <NavPanel />
+            <NavPanel/>
             <Refer activeUser={this.props.activeUser}/>
-            <Progress />
+            <Progress  activeUser={this.props.activeUser} />
 
             <button onClick={this.handleLogout} >Sign out</button>
         </div>
