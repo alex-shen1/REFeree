@@ -20,31 +20,24 @@ class App extends React.Component {
     super(props);
     this.state = {
       activeUser: null, // UID of current user
-      isLoggedIn: false,
-      allUsers: null
+      isLoggedIn: false
     }
   }
 
   componentDidMount() {
-    // run in case user is logged in, but page refreshed
-    // kinda duplicate of in login, might change later
+    this.loadUserData(); // run in case user is logged in, but page refreshed
+  }
+
+  loadUserData = () => {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
-        // console.log(user)
-        this.setActiveUser(user.uid)
+        console.log(user)
+        this.setState({ activeUser: user.uid, isLoggedIn: true })
       } else {
         console.log("no user")
       }
     });
-
-    database.ref("userData").on("value", snapshot => {
-      if (snapshot && snapshot.exists()) {
-        this.setState({ allUsers: Object.keys(snapshot.val()) })
-      }
-    })
   }
-
-  setActiveUser = userID => this.setState({ activeUser: userID, isLoggedIn: userID != null })
 
   resetFirebase = () => {
     Object.keys(sampleData).map(id => {
@@ -78,15 +71,15 @@ class App extends React.Component {
             <Route exact path="/about" component={AboutPage} />
             <Route exact path="/login" render={(props) =>
               <Login {...props}
-                setActiveUser={this.setActiveUser}
+                loadUserData={this.loadUserData}
+                handleGoogleLogin={this.handleGoogleLogin}
                 isLoggedIn={this.state.isLoggedIn}
+                handleLogout={this.handleLogout}
                 referrer={null} />} />
-            {this.state.allUsers != null ? this.state.allUsers.map(id => {
+            {Object.keys(sampleData).map(id => {
               return <Route exact path={`/ref/${id}`} render={(props) =>
-                <ReferralLanding {...props}
-                  id={id}
-                  setActiveUser={this.setActiveUser} />} />
-            }) : ""}
+                <ReferralLanding {...props} id={id} />} />
+            })}
           </Switch>
         </Router> */}
 
