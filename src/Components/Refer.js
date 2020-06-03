@@ -38,7 +38,7 @@ class Refer extends React.Component {
                         </Card>
                     </Col>
                     <Col>
-                        <Card style={{ margin: "0 auto", width: "16vw", height: "25vh", marginTop: "3vh", marginBottom: "3vh", float: "none" }}>
+                        <Card style={{ margin: "0 auto", width: "20vw", height: "25vh", marginTop: "3vh", marginBottom: "3vh", float: "none" }}>
                             <Card.Header>
                                 Refer a friend!
                             </Card.Header>
