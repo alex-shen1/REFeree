@@ -12,3 +12,12 @@
     width: 40vw;
     float: none;
 }
+
+.Message {
+    margin: 0 auto;
+    width: 30vw;
+    height: 25vh;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    float: none;
+}

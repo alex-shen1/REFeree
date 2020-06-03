@@ -6,7 +6,7 @@ export const sampleData = {
     },
     "kcEgNwSW3ZN10k8BwXJG0fPxylr2": {
         firstName: "Alan",
-        lastName: "Li", 
+        lastName: "Li",
         referrals: 3
     }
 }

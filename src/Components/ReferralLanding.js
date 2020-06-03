@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import {   database   } from "../firebase"
+import { database } from "../firebase"
 
 export default class ReferralLanding extends Component {
     // componentDidMount() {
