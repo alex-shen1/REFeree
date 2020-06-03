@@ -73,7 +73,7 @@ class App extends React.Component {
     // console.log(process.env)
     return (
       <div className="app">
-        <Router basename={process.env.PUBLIC_URL}>
+        <Router>
           <Switch>
             {/* default path, redirects to login */}
             <Route exact path="/" render={props => {
