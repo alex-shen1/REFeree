@@ -1,13 +1,11 @@
 import React from 'react';
 import '../Styling/Login.css';
-import firebase, { database } from '../firebase.js';
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import firebase from '../firebase.js';
-import 'firebase/auth';
 
 
-import { auth, googleProvider } from "../firebase"
+import { auth, googleProvider, database } from "../firebase"
 
 export default class Login extends React.Component {
     constructor(props) {
