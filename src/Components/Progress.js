@@ -101,16 +101,16 @@ class Progress extends React.Component {
                     <div className="carousel">
                         <Carousel>
                             <Carousel.Item>
-                                <img class="d-block mx-auto" src={FacebookGroup} alt="FaceBookGroup" />
+                                <img class="d-block mx-auto" src="https://live.staticflickr.com/65535/49968391176_5810f896e5_o.png" width="400px" height="400px" alt="FaceBookGroup" />
                             </Carousel.Item>
                             <Carousel.Item>
-                                <img class="d-block mx-auto" src={Sticker} alt="Sticker" />
+                                <img class="d-block mx-auto" src="https://live.staticflickr.com/65535/49968391076_1e2941b92d_o.png" width="400px" height="400px" alt="Sticker" />
                             </Carousel.Item>
                             <Carousel.Item>
-                                <img class="d-block mx-auto" src={Tshirt} alt="T-Shirt" />
+                                <img class="d-block mx-auto" src="https://live.staticflickr.com/65535/49968658347_90e8b3770c_o.png" width="400px" height="400px" alt="T-Shirt" />
                             </Carousel.Item>
                             <Carousel.Item>
-                                <img class="d-block mx-auto" src={SneakPeak} alt="Sneaker" />
+                                <img class="d-block mx-auto" src="https://live.staticflickr.com/65535/49968658267_051134fdbf_o.png" width="400px" height="400px" alt="Sneaker" />
                             </Carousel.Item>
                         </Carousel>
                     </div>
