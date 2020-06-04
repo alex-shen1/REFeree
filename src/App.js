@@ -93,11 +93,14 @@ class App extends React.Component {
                 activeUser={this.state.activeUser}
                 isLoggedIn={this.state.isLoggedIn}
                 setActiveUser={this.setActiveUser}
+                isAdmin={this.state.isAdmin}
               />} />
 
             <Route exact path="/about" render={(props) =>
               <AboutPage {...props}
-                isLoggedIn={this.state.isLoggedIn} />} />
+                isLoggedIn={this.state.isLoggedIn}
+                setActiveUser={this.setActiveUser}
+                isAdmin={this.state.isAdmin} />} />
 
             <Route exact path="/login" render={(props) =>
               <Login {...props}
@@ -116,6 +119,8 @@ class App extends React.Component {
 
             <Route exact path="/admin" render={(props) =>
               <AdminPage {...props}
+                activeUser={this.state.activeUser}
+                setActiveUser={this.setActiveUser}
                 isAdmin={this.state.isAdmin} />} />
           </Switch>
         </Router>

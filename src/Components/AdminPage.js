@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import { database } from "../firebase"
 import Card from "react-bootstrap/Card"
+import NavPanel from './NavPanel';
 
 import { Redirect } from "react-router-dom"
 
@@ -22,6 +23,7 @@ export default class AdminPage extends Component {
 
     render() {
         return this.props.isAdmin ? <div className="adminpage">
+            <NavPanel isAdmin={this.props.isAdmin} activeUser={this.props.activeUser} setActiveUser={this.props.setActiveUser}/>
             {this.state.userData != null ? Object.values(this.state.userData).map(user => {
                 return <Card>
                     <Card.Title>{user.name}</Card.Title>
