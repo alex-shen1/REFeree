@@ -26,20 +26,27 @@ export default class Login extends React.Component {
             let user = result.user;
             this.props.setActiveUser(user.uid)
 
-            // check if logged user is already in list of all users; if not, initialize new account data
+            // check logged in user
             database.ref("userData").once("value", snapshot => {
                 if (snapshot && snapshot.exists()) {
                     let userAlreadyExists = false;
+
+                    // check if user is new
                     Object.keys(snapshot.val()).map(id => {
                         if (user.uid === id) {
                             userAlreadyExists = true;
+                            console.log(`${id} exists`)
                         }
+                        
                     })
 
+                    // if user is new, then initialize data
                     if (!userAlreadyExists) {
                         let new_user_data = {
                             "name": user.displayName,
-                            "referrals": 0
+                            "referrals": 0,
+                            "email": user.email,
+                            "created": new Date().toLocaleString('en-US', {timezone: 'UTC-8'})
                         }
                         database.ref(`userData/${user.uid}`).set(new_user_data)
 
