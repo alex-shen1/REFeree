@@ -32,7 +32,7 @@ export default function () {
             <NavPanel />
 
             <div className="about" style={{ backgroundColor: '#FAD29E' }}>
-                <Row style={{ marginBottom: "3vh" }}>
+                <Row style={{ marginBottom: "1vh", marginTop: "1vh" }}>
                     <Col xs="5">
                         <img src="https://live.staticflickr.com/65535/49970101703_5e7002749a_o.png" />
                     </Col>
