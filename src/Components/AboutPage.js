@@ -32,12 +32,47 @@ export default function () {
             <NavPanel />
 
             <div className="about" style={{ backgroundColor: '#FAD29E' }}>
-                <Row>
+                <Row style={{ marginBottom: "3vh" }}>
                     <Col xs="5">
                         <img src="https://live.staticflickr.com/65535/49970101703_5e7002749a_o.png" />
                     </Col>
                     <Col style={{ marginTop: "30vh" }}>
-                        <h3> Hi, we’re Sneak Co. and we are proud to craft sleek, smart, and sustainable shoes that help you move effortlessly wherever you go. </h3>
+                        <h1>Hi, we're Sneak Co. </h1>
+                        <h3> We're proud to craft sleek, smart, and sustainable shoes that help you move effortlessly wherever you go. </h3>
+                    </Col>
+                </Row>
+            </div>
+            <div className="moreAbout" style={{ backgroundColor: '#E0DFE2' }}>
+                <Row style={{ marginBottom: "5vh" }}>
+                    <Col xs="6" style={{ marginTop: "13vh" }}>
+                        <h3>What We Do</h3>
+                        <h5>At Sneak Co. we transform sustainable materials into comfortable and versatile shoes that are both stylish and eco-friendly.
+                            Our products are made to last and built with materials that can easily be recycled.</h5>
+                    </Col>
+                    <Col>
+                        <img src="https://live.staticflickr.com/65535/49971026832_6be1e52ae5_z.jpg" />
+                    </Col>
+                </Row>
+                <Row style={{ marginBottom: "5vh" }}>
+                    <Col xs="6">
+                        <img src="https://live.staticflickr.com/65535/49970751621_d2e8e5acfe_z.jpg" />
+                    </Col>
+                    <Col style={{ marginTop: "15vh" }}>
+                        <h3>Why We Do It</h3>
+                        <h5>We are driven to create a better tomorrow. It is no longer acceptable for products to sit in a landfill for a hundred years—
+                            that is why we are committed to creating sustainably-sourced shoes with end-of-life in mind. </h5>
+                    </Col>
+                </Row>
+                <Row style={{ marginBottom: "5vh" }}>
+                    <Col xs="6" style={{ marginTop: "13vh" }}>
+                        <h3>Full Circle Footwear</h3>
+                        <h5>Every pair of Sneak Co. shoes is backed by our commitment to building a better future. We’ve designed our shoes with materials
+                        that can be easily reclaimed for recycling, so when you’re done with yours, we’ll be here to take them back and keep them out of
+                        landfills. Send them back to our address with our pre-paid shipping label, and we’ll give you a discount on your next
+                            Sneak Co. purchase. </h5>
+                    </Col>
+                    <Col>
+                        <img src="https://live.staticflickr.com/65535/49970781866_a62e0b682a_z.jpg" />
                     </Col>
                 </Row>
             </div>
