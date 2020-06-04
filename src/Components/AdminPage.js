@@ -61,12 +61,12 @@ export default class AdminPage extends Component {
         const sortFields = ["Name (A-Z)", "Date created", "Points (Descending)", "Points (Ascending)"]
         return this.props.isAdmin ? <div className="adminpage">
             <NavPanel isAdmin={this.props.isAdmin} activeUser={this.props.activeUser} setActiveUser={this.props.setActiveUser} />
-            
+
             <Dropdown>
                 <Dropdown.Toggle>Sort by...</Dropdown.Toggle>
                 <Dropdown.Menu>
                     {sortFields.map(field => {
-                        return <Dropdown.Item onClick={()=>this.setState({sortField: field})}>{field}</Dropdown.Item>
+                        return <Dropdown.Item onClick={() => this.setState({ sortField: field })}>{field}</Dropdown.Item>
                     })}
                 </Dropdown.Menu>
             </Dropdown>
