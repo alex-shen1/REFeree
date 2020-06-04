@@ -15,6 +15,7 @@ export default class HomePage extends Component {
         auth.signOut()
         this.props.setActiveUser(null)
     }
+    
     render() {
         return this.props.isLoggedIn ? <div className="homepage">
             <NavPanel />

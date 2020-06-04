@@ -80,10 +80,9 @@ class Progress extends React.Component {
 
                                 <div className='Milestones'>
                                     <div>Rewards</div>
-                                    <div style={{ marginLeft: '3vw' }} className='Rewards'>{prizes[0]}</div>
-                                    <div style={{ marginLeft: '3vw' }} className='Rewards'>{prizes[1]}</div>
-                                    <div style={{ marginLeft: '3vw' }} className='Rewards'>{prizes[2]}</div>
-                                    <div style={{ marginLeft: '3vw' }} className='Rewards'>{prizes[3]}</div>
+                                    {prizes.map(prize => {
+                                        return <div style={{ marginLeft: '3vw' }} className='Rewards'>{prize}</div>
+                                    })}
                                 </div>
                             </Card.Body>
 

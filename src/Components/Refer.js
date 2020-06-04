@@ -13,6 +13,7 @@ class Refer extends React.Component {
             activeUser: null
         }
     }
+
     componentDidUpdate(prevProps) {
         if (this.props.activeUser != prevProps.activeUser) {
             this.setState({ activeUser: this.props.activeUser })
@@ -23,6 +24,7 @@ class Refer extends React.Component {
         this.setState({ activeUser: this.props.activeUser })
         console.log(this.props.activeUser)
     }
+    
     render() {
         return (
             <div className="ref">
