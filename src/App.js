@@ -84,11 +84,9 @@ class App extends React.Component {
 
             <Route exact path="/login" render={(props) =>
               <Login {...props}
-                loadUserData={this.loadUserData}
-                handleGoogleLogin={this.handleGoogleLogin}
                 isLoggedIn={this.state.isLoggedIn}
-                handleLogout={this.handleLogout}
-                referrer={null} />} />
+                referrer={null} 
+                setActiveUser={this.setActiveUser}/>} />
 
             {/* generates landing pages for referral links */}
             {this.state.allUsers ? this.state.allUsers.map(id => {
