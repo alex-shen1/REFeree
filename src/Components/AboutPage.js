@@ -28,7 +28,7 @@ const questions = [
 ]
 
 export default function (props) {
-    return (
+    return props.isLoggedIn ?
         <div >
             <NavPanel isAdmin={props.isAdmin} activeUser={props.activeUser} setActiveUser={props.setActiveUser} />
 
@@ -91,6 +91,5 @@ export default function (props) {
                     )
                 })}
             </div>
-        </div>
-    )
+        </div> : <Redirect to='/home' />
 }
