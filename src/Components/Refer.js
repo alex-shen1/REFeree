@@ -88,7 +88,7 @@ class Refer extends React.Component {
             <div className="ref">
                 <Row>
                     <Col>
-                        <Card style={{ margin: "0 auto", width: "45vw", height: "18vh", marginTop: "2vh", marginBottom: "2vh", float: "none", marginLeft: "10vw" }}>
+                        <Card style={{ margin: "0 auto", width: "45vw", height: "19vh", marginTop: "2vh", marginBottom: "2vh", float: "none", marginLeft: "10vw" }}>
                             <Card.Header>
                                 Your Referral Link:
                                 <div style={{ float: 'right' }}>
@@ -102,7 +102,7 @@ class Refer extends React.Component {
                         </Card>
                     </Col>
                     <Col>
-                        <Card style={{ margin: "0 auto", width: "20vw", height: "18vh", marginTop: "2vh", marginBottom: "2vh", float: "none" }}>
+                        <Card style={{ margin: "0 auto", width: "20vw", height: "19vh", marginTop: "2vh", marginBottom: "2vh", float: "none" }}>
                             <Card.Header>
                                 Refer a friend!
                             </Card.Header>
