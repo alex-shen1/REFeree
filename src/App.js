@@ -1,12 +1,9 @@
 import React from 'react';
 
-import NavPanel from './Components/NavPanel.js';
-import Progress from './Components/Progress.js';
 import AboutPage from './Components/AboutPage.js';
 import HomePage from "./Components/HomePage"
 import Login from "./Components/Login"
 import ReferralLanding from "./Components/ReferralLanding"
-import Refer from './Components/Refer.js';
 import { HashRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
 import { sampleData } from "./data"

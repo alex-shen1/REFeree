@@ -4,7 +4,6 @@ import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import { database, auth } from "../firebase";
 
 class Refer extends React.Component {
     constructor(props) {
@@ -15,7 +14,7 @@ class Refer extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.activeUser != prevProps.activeUser) {
+        if (this.props.activeUser !== prevProps.activeUser) {
             this.setState({ activeUser: this.props.activeUser })
         }
     }
