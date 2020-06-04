@@ -12,8 +12,8 @@ const imageLinks = ["https://cdn2.hubspot.net/hubfs/521324/App-Icon-1200x1200-gm
     "https://live.staticflickr.com/65535/49967495518_10d097dfe5_o.png"]
 
 const messages = [
-    "I’m inviting you to check out Sneak Co! Sneak Co. is an up-and-coming brand dedicated to creating stylish, sustainable shoes. Sneak Co. products are made to last and built with easily-recyclable materials for a future-friendly shoe. Sign up and stay in the loop with the link below and earn one point towards Sneak Co. exclusive rewards!",
-    "Hey everyone, check out Sneak Co! Sneak Co. is an up-and-coming brand dedicated to creating stylish, sustainable shoes. Sneak Co. products are made to last and built with easily-recyclable materials for a future-friendly shoe. Sign up and stay in the loop here with the link below and earn one point towards Sneak Co. exclusive rewards!",
+    "I’m inviting you to check out Sneak Co! Sneak Co. is an up-and-coming brand dedicated to creating stylish, sustainable shoes. Sneak Co. products are made to last and built with easily-recyclable materials for a future-friendly shoe. Sign up and stay in the loop with the link below and start earning points towards Sneak Co. exclusive rewards!",
+    "Hey everyone, check out Sneak Co! Sneak Co. is an up-and-coming brand dedicated to creating stylish, sustainable shoes. Sneak Co. products are made to last and built with easily-recyclable materials for a future-friendly shoe. Sign up and stay in the loop here with the link below and start earning points towards Sneak Co. exclusive rewards!",
 ]
 
 class Refer extends React.Component {
