@@ -11,12 +11,8 @@ export default function HomePage(props) {
     return (
         props.isLoggedIn ?
             <div className="homepage">
-<<<<<<< HEAD
-                <NavPanel activeUser={props.activeUser} setActiveUser={props.setActiveUser} />
-                <img src="https://live.staticflickr.com/65535/49971709937_f7a58c3476_o.png" />
-=======
                 <NavPanel isAdmin={props.isAdmin} activeUser={props.activeUser} setActiveUser={props.setActiveUser} />
->>>>>>> master
+                <img src="https://live.staticflickr.com/65535/49971709937_f7a58c3476_o.png" />
                 <Refer activeUser={props.activeUser} />
                 <Progress activeUser={props.activeUser} />
             </div> : <Redirect to='/login' />

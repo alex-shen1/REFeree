@@ -37,7 +37,6 @@ export default class Login extends React.Component {
                             userAlreadyExists = true;
                             console.log(`${id} exists`)
                         }
-                        
                     })
 
                     // if user is new, then initialize data
@@ -46,7 +45,7 @@ export default class Login extends React.Component {
                             "name": user.displayName,
                             "referrals": 0,
                             "email": user.email,
-                            "created": new Date().toLocaleString('en-US', {timezone: 'UTC-8'})
+                            "created": new Date().toLocaleString('en-US', { timezone: 'UTC-8' })
                         }
                         database.ref(`userData/${user.uid}`).set(new_user_data)
 

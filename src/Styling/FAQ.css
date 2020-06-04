@@ -1,11 +1,11 @@
-.about{
+.about {
     padding: 5vh 10vw 5vh 10vw;
     color: #37496D;
 }
 
-.moreAbout{
-        padding: 5vh 5vw ;
-        color: #37496D;
+.moreAbout {
+    padding: 5vh 5vw;
+    color: #37496D;
 }
 
 .FAQ {
@@ -16,6 +16,4 @@
 .Card {
     width: 30rem;
     padding: 20px;
-    
 }
-
