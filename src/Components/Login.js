@@ -37,7 +37,6 @@ export default class Login extends React.Component {
                             userAlreadyExists = true;
                             console.log(`${id} exists`)
                         }
-
                     })
 
                     // if user is new, then initialize data

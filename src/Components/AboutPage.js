@@ -28,10 +28,10 @@ const questions = [
 ]
 
 export default function (props) {
+
     return props.isLoggedIn ?
         <div >
             <NavPanel isAdmin={props.isAdmin} activeUser={props.activeUser} setActiveUser={props.setActiveUser} />
-
             <div className="about" style={{ backgroundColor: '#FAD29E' }}>
                 <Row style={{ marginBottom: "1vh", marginTop: "1vh" }}>
                     <Col xs="5">
