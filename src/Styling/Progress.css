@@ -7,6 +7,13 @@
     margin: 3vh 0 3vh 10vw;
 }
 
+.carousel {
+    width: 40vw;
+    margin:0 auto;
+    margin-bottom: 2vh;
+    float: none;
+}
+
 .Title {
     margin-top: 2vh;
     margin-left: 1vw;

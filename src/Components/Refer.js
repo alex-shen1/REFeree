@@ -4,7 +4,6 @@ import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import { database, auth } from "../firebase";
 
 class Refer extends React.Component {
     constructor(props) {
@@ -14,7 +13,7 @@ class Refer extends React.Component {
         }
     }
     componentDidUpdate(prevProps) {
-        if (this.props.activeUser != prevProps.activeUser) {
+        if (this.props.activeUser !== prevProps.activeUser) {
             this.setState({ activeUser: this.props.activeUser })
         }
     }
@@ -38,7 +37,7 @@ class Refer extends React.Component {
                         </Card>
                     </Col>
                     <Col>
-                        <Card style={{ margin: "0 auto", width: "16vw", height: "25vh", marginTop: "3vh", marginBottom: "3vh", float: "none" }}>
+                        <Card style={{ margin: "0 auto", width: "20vw", height: "25vh", marginTop: "3vh", marginBottom: "3vh", float: "none" }}>
                             <Card.Header>
                                 Refer a friend!
                             </Card.Header>
@@ -50,7 +49,7 @@ class Refer extends React.Component {
                                     <img src="https://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19748.png" width="40px" height="40px" />
                                 </Button> {' '}
                                 <Button variant="light">
-                                    <img src="https://lh3.googleusercontent.com/proxy/L1Qczy6X8MHlu0EOMm6NPr88KdGmpGS6ocRV0l3lqsn96R0Wz2ec6nEViQKXW-MY_KBSBxLlrooEkwEk4_EzrIA_l0oKvAxQmPplyQR11AAFzrGsCoEFqxCDQbC_sBSjZA" width="40px" height="40px" />
+                                    <img src="https://live.staticflickr.com/65535/49967495518_10d097dfe5_o.png" width="40px" height="40px" />
                                 </Button> {' '}
                             </Card.Body>
                         </Card>
