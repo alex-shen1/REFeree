@@ -28,13 +28,16 @@ class NavPanel extends React.Component {
     render() {
 
         return (
-            <div className="navpanel">
+            <div>
                 <Navbar bg="light" expand="lg">
-                    <Navbar.Brand href="#home">REFeree</Navbar.Brand>
+                    <Navbar.Brand>
+                        <img src="https://live.staticflickr.com/65535/49968029767_6d56a52575_o.png" width="70px" height="70px" alt="logo" />
+                    </Navbar.Brand>
+                    <Navbar.Brand href="#home">REFERee</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <div>
-                            <Link to='/home'> Home </Link>
+                            <Link to='/home' style={{ paddingRight: 10 }}> Home</Link>
                             <Link to='/about'>About Us</Link>
                         </div>
 
