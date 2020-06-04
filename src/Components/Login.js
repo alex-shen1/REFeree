@@ -26,8 +26,7 @@ export default class Login extends React.Component {
             let user = result.user;
             this.props.setActiveUser(user.uid)
 
-
-            // check if logged user is already in list of all users; if not, initialize their data
+            // check if logged user is already in list of all users; if not, initialize new account data
             database.ref("userData").once("value", snapshot => {
                 if (snapshot && snapshot.exists()) {
                     let userAlreadyExists = false;
@@ -85,7 +84,6 @@ export default class Login extends React.Component {
         })
     }
 
-
     handleLogout = () => {
         console.log("logging out")
         this.setState({ isLoggedIn: false, activeUser: null })
@@ -106,7 +104,7 @@ export default class Login extends React.Component {
                         <NavBar.Brand>REFERee</NavBar.Brand>
                     </NavBar>
                     <div style={{ textAlign: "center" }}>
-                        <img src="https://live.staticflickr.com/65535/49968206482_048c35a16a_o.png" width="1100px" height="618px" alt="shoes" />
+                        <img src="https://live.staticflickr.com/65535/49968206482_048c35a16a_o.png" width="1000px" height="518px" alt="shoes" />
                     </div>
                     {
                         this.props.isLoggedIn
@@ -124,12 +122,6 @@ export default class Login extends React.Component {
                             ? <Button variant="outline-info" onClick={this.handleLogout} >Sign out</Button>
                             : ""
                     }
-                    {/* <button onClick={this.handleLogout} >Sign out</button>
-                    <button onClick={this.handleGoogleLogin}>Sign in with Google</button>
-                    <button onClick={this.creditReferrer}>test giving points</button>
-                    {/* ? <Button variant="outline-info" onClick={this.handleLogout} >Sign out</Button>
-                            : <Button variant="outline-info" onClick={this.handleGoogleLogin}>Sign in with Google</Button>
-                    } */}
                 </div> : <Redirect to='/home' />}
             </div>
         )

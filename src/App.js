@@ -1,21 +1,16 @@
 import React from 'react';
-import './App.css';
-import NavPanel from './Components/NavPanel.js';
-import Progress from './Components/Progress.js';
+
 import AboutPage from './Components/AboutPage.js';
 import HomePage from "./Components/HomePage"
 import Login from "./Components/Login"
 import ReferralLanding from "./Components/ReferralLanding"
-import Refer from './Components/Refer.js';
 import { HashRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
-
 import { sampleData } from "./data"
-
 import { auth, database } from "./firebase"
 
-
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -57,11 +52,8 @@ class App extends React.Component {
   printUser = () => {
     auth.onAuthStateChanged(function (user) {
       if (user) {
-        // id = user.uid
-        // this.setState({ activeUser: user.uid })
         console.log(user)
       } else {
-        // No user is signed in.
         console.log("no user")
       }
     });
@@ -70,7 +62,6 @@ class App extends React.Component {
   setActiveUser = userID => this.setState({ activeUser: userID, isLoggedIn: (userID != null) })
 
   render() {
-    // console.log(process.env)
     return (
       <div className="app">
         <Router>
@@ -110,10 +101,6 @@ class App extends React.Component {
             }) : ""}
           </Switch>
         </Router>
-
-        {/* <button onClick={this.handleGoogleLogin}>Log in w/ google</button> */}
-        {/* <button onClick={this.loadUserData}>Print user</button> */}
-        {/* <button onClick={()=>auth.signOut()}>Sign out</button> */}
       </div>
     )
   }
