@@ -45,7 +45,7 @@ class App extends React.Component {
       }
     })
   }
-  
+
   // debugging function; remove later
   resetFirebase = () => {
     Object.keys(sampleData).map(id => {
@@ -111,9 +111,6 @@ class App extends React.Component {
           </Switch>
         </Router>
 
-        {/* <button onClick={this.handleGoogleLogin}>Log in w/ google</button> */}
-        <button onClick={this.loadUserData}>Print user</button>
-        {/* <button onClick={()=>auth.signOut()}>Sign out</button> */}
       </div>
     )
   }
