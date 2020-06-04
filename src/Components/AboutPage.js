@@ -26,10 +26,10 @@ const questions = [
     },
 ]
 
-export default function () {
+export default function (props) {
     return (
         <div >
-            <NavPanel />
+            <NavPanel isAdmin={props.isAdmin} activeUser={props.activeUser} setActiveUser={props.setActiveUser}/>
 
             <div className="about" style={{ backgroundColor: '#FAD29E' }}>
                 <Row style={{ marginBottom: "1vh", marginTop: "1vh" }}>

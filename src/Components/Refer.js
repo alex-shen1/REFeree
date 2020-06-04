@@ -5,10 +5,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 
-import { EmailShareButton, FacebookShareButton, TwitterShareButton } from "react-share";
-import { EmailIcon, FacebookIcon, TwitterIcon } from "react-share";
-
-
 const imageLinks = ["https://cdn2.hubspot.net/hubfs/521324/App-Icon-1200x1200-gmail.png",
     "https://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19748.png",
     "https://live.staticflickr.com/65535/49967495518_10d097dfe5_o.png"]
@@ -29,7 +25,7 @@ class Refer extends React.Component {
 
     componentDidMount() {
         this.setState({ activeUser: this.props.activeUser })
-        console.log(this.props.activeUser)
+        // console.log(this.props.activeUser)
     }
 
     copyTextToClipboard = () => {

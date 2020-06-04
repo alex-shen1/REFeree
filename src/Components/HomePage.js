@@ -11,7 +11,7 @@ export default function HomePage(props) {
     return (
         props.isLoggedIn ?
             <div className="homepage">
-                <NavPanel activeUser={props.activeUser} setActiveUser={props.setActiveUser} />
+                <NavPanel isAdmin={props.isAdmin} activeUser={props.activeUser} setActiveUser={props.setActiveUser} />
                 <Refer activeUser={props.activeUser} />
                 <Progress activeUser={props.activeUser} />
             </div> : <Redirect to='/login' />
