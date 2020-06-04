@@ -4,16 +4,16 @@ import { database } from "../firebase"
 import Login from "./Login"
 
 export default class ReferralLanding extends Component {
-constructor(props){
-    super(props);
-    this.state = {
-        referrersName: ""
+    constructor(props) {
+        super(props);
+        this.state = {
+            referrersName: ""
+        }
     }
-}
     componentDidMount = () => {
-        database.ref(`userData/${this.props.id}`).once("value", snapshot=>{
-            if(snapshot && snapshot.exists()){
-                this.setState({referrersName: snapshot.val().name});
+        database.ref(`userData/${this.props.id}`).once("value", snapshot => {
+            if (snapshot && snapshot.exists()) {
+                this.setState({ referrersName: snapshot.val().name });
             }
         })
     }
