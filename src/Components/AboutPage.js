@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import NavPanel from './NavPanel';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
 import { Redirect } from "react-router-dom"
 
 const questions = [
