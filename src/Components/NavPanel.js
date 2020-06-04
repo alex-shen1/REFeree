@@ -37,8 +37,8 @@ class NavPanel extends React.Component {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <div>
-                            <Link to='/home' style={{ paddingRight: 10 }}> Home</Link>
-                            <Link to='/about' style={{ paddingRight: 10 }}>About Us</Link>
+                            <Link to='/home' style={{ paddingRight: 15 }}> Home</Link>
+                            <Link to='/about' style={{ paddingRight: 15 }}>About Us</Link>
                             {this.props.isAdmin ? <Link to='/admin' style={{ paddingRight: 10 }}>Admin Dashboard</Link> : ""}
                         </div>
 
