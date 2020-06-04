@@ -3,7 +3,8 @@ import "../Styling/FAQ.css";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import NavPanel from './NavPanel';
-
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import { Redirect } from "react-router-dom"
 
 const questions = [
@@ -27,15 +28,21 @@ const questions = [
 
 export default function () {
     return (
-        <div style={{ backgroundColor: '#37496D' }}>
+        <div >
             <NavPanel />
 
-            <div className="about">
-                <h1>About our team</h1>
-                <h4> </h4
-                ></div>
+            <div className="about" style={{ backgroundColor: '#FAD29E' }}>
+                <Row>
+                    <Col xs="5">
+                        <img src="https://live.staticflickr.com/65535/49970101703_5e7002749a_o.png" />
+                    </Col>
+                    <Col style={{ marginTop: "30vh" }}>
+                        <h3> Hi, we’re Sneak Co. and we are proud to craft sleek, smart, and sustainable shoes that help you move effortlessly wherever you go. </h3>
+                    </Col>
+                </Row>
+            </div>
 
-            <div className="FAQ">
+            <div className="FAQ" style={{ backgroundColor: '#37496D' }}>
                 <h1 style={{ marginBottom: 20 }}>FAQs</h1>
                 <h4 style={{ marginBottom: 40 }}>If you still have more questions, please contact our team through email!</h4>
 
