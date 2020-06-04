@@ -1,29 +1,25 @@
 {
   "files": {
-    "main.css": "/REFERee/static/css/main.ccc37ae8.chunk.css",
-    "main.js": "/REFERee/static/js/main.60bc89e2.chunk.js",
-    "main.js.map": "/REFERee/static/js/main.60bc89e2.chunk.js.map",
+    "main.css": "/REFERee/static/css/main.762c52f3.chunk.css",
+    "main.js": "/REFERee/static/js/main.ac964a38.chunk.js",
+    "main.js.map": "/REFERee/static/js/main.ac964a38.chunk.js.map",
     "runtime-main.js": "/REFERee/static/js/runtime-main.6912d1f7.js",
     "runtime-main.js.map": "/REFERee/static/js/runtime-main.6912d1f7.js.map",
     "static/css/2.af3c1da9.chunk.css": "/REFERee/static/css/2.af3c1da9.chunk.css",
-    "static/js/2.1f3114b8.chunk.js": "/REFERee/static/js/2.1f3114b8.chunk.js",
-    "static/js/2.1f3114b8.chunk.js.map": "/REFERee/static/js/2.1f3114b8.chunk.js.map",
+    "static/js/2.68b615d4.chunk.js": "/REFERee/static/js/2.68b615d4.chunk.js",
+    "static/js/2.68b615d4.chunk.js.map": "/REFERee/static/js/2.68b615d4.chunk.js.map",
     "index.html": "/REFERee/index.html",
-    "precache-manifest.83f6366da81d88535d14a944c732fe98.js": "/REFERee/precache-manifest.83f6366da81d88535d14a944c732fe98.js",
+    "precache-manifest.28852fad46cd43cf1c71034090f35ad8.js": "/REFERee/precache-manifest.28852fad46cd43cf1c71034090f35ad8.js",
     "service-worker.js": "/REFERee/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/REFERee/static/css/2.af3c1da9.chunk.css.map",
-    "static/css/main.ccc37ae8.chunk.css.map": "/REFERee/static/css/main.ccc37ae8.chunk.css.map",
-    "static/js/2.1f3114b8.chunk.js.LICENSE.txt": "/REFERee/static/js/2.1f3114b8.chunk.js.LICENSE.txt",
-    "static/media/FacebookGroup.png": "/REFERee/static/media/FacebookGroup.977f7c4f.png",
-    "static/media/SneakPeak.png": "/REFERee/static/media/SneakPeak.780d2785.png",
-    "static/media/Sticker.png": "/REFERee/static/media/Sticker.951f40eb.png",
-    "static/media/Tshirt.png": "/REFERee/static/media/Tshirt.c5e7a2fc.png"
+    "static/css/main.762c52f3.chunk.css.map": "/REFERee/static/css/main.762c52f3.chunk.css.map",
+    "static/js/2.68b615d4.chunk.js.LICENSE.txt": "/REFERee/static/js/2.68b615d4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6912d1f7.js",
     "static/css/2.af3c1da9.chunk.css",
-    "static/js/2.1f3114b8.chunk.js",
-    "static/css/main.ccc37ae8.chunk.css",
-    "static/js/main.60bc89e2.chunk.js"
+    "static/js/2.68b615d4.chunk.js",
+    "static/css/main.762c52f3.chunk.css",
+    "static/js/main.ac964a38.chunk.js"
   ]
 }
