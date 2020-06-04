@@ -10,7 +10,6 @@ import { Redirect } from "react-router-dom"
 import { auth } from "../firebase"
 export default class HomePage extends Component {
     handleLogout = () => {
-        console.log("logging out")
         this.setState({ isLoggedIn: false, activeUser: null })
         auth.signOut()
         this.props.setActiveUser(null)
@@ -19,10 +18,11 @@ export default class HomePage extends Component {
     render() {
         return this.props.isLoggedIn ? <div className="homepage">
             <NavPanel />
+            <button onClick={this.handleLogout} >Sign out</button>
             <Refer activeUser={this.props.activeUser} />
             <Progress activeUser={this.props.activeUser} />
 
-            <button onClick={this.handleLogout} >Sign out</button>
+
         </div> : <Redirect to='/login' />
     }
 }
