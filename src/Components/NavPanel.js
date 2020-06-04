@@ -38,7 +38,7 @@ class NavPanel extends React.Component {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <div>
                             <Link to='/home' style={{ paddingRight: 10 }}> Home</Link>
-                            <Link to='/about'>About Us</Link>
+                            <Link to='/about'>About Us/FAQ</Link>
                         </div>
 
                     </Navbar.Collapse>

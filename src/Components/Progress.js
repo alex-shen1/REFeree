@@ -62,8 +62,6 @@ export default function Progress(props) {
                                 className='ProgressBar'
                                 label={referralCount}
                             />
-
-
                             <div className='Milestones'>
                                 <div>Rewards</div>
                                 {prizes.map(prize => {
@@ -71,128 +69,37 @@ export default function Progress(props) {
                                 })}
                             </div>
                         </Card.Body>
-
                     </Card>
                 </Col>
 
                 <Col>
                     <Card className='Message'>
-                        <Card.Body>You are {nextPrizeAt - referralCount % nextPrizeAt} referrals away from the next prize,
+                        <Card.Body style={{ marginTop: "6vh" }}>You are {nextPrizeAt - referralCount % nextPrizeAt} referrals away from the next prize,
                                 which is {longerPrizes[Math.floor(referralCount / 5)]}!!</Card.Body>
                     </Card>
                 </Col>
             </Row>
             <Row>
-                <div className="carousel">
-                    <Carousel indicators={false}>
-                        <Carousel.Item>
-                            <img class="d-block mx-auto" src="https://live.staticflickr.com/65535/49968391176_5810f896e5_o.png" width="280px" height="280px" alt="FaceBookGroup" />
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img class="d-block mx-auto" src="https://live.staticflickr.com/65535/49968391076_1e2941b92d_o.png" width="280px" height="280px" alt="Sticker" />
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img class="d-block mx-auto" src="https://live.staticflickr.com/65535/49968658347_90e8b3770c_o.png" width="280px" height="280px" alt="T-Shirt" />
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img class="d-block mx-auto" src="https://live.staticflickr.com/65535/49968658267_051134fdbf_o.png" width="280px" height="280px" alt="Sneaker" />
-                        </Carousel.Item>
-                    </Carousel>
-                </div>
+                <Col>
+                    <div className="carousel">
+                        <Carousel indicators={false}>
+                            <Carousel.Item>
+                                <img class="d-block mx-auto" src="https://live.staticflickr.com/65535/49968391176_5810f896e5_o.png" width="280px" height="280px" alt="FaceBookGroup" />
+                            </Carousel.Item>
+                            <Carousel.Item>
+                                <img class="d-block mx-auto" src="https://live.staticflickr.com/65535/49968391076_1e2941b92d_o.png" width="280px" height="280px" alt="Sticker" />
+                            </Carousel.Item>
+                            <Carousel.Item>
+                                <img class="d-block mx-auto" src="https://live.staticflickr.com/65535/49968658347_90e8b3770c_o.png" width="280px" height="280px" alt="T-Shirt" />
+                            </Carousel.Item>
+                            <Carousel.Item>
+                                <img class="d-block mx-auto" src="https://live.staticflickr.com/65535/49968658267_051134fdbf_o.png" width="280px" height="280px" alt="Sneaker" />
+                            </Carousel.Item>
+                        </Carousel>
+                    </div>
+                </Col>
             </Row>
         </div>
     )
 
 }
-
-// class Progress extends React.Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             referralCount: 0,
-//             nextPrizeAt: 5,
-//             activeUser: this.props.activeUser
-//         }
-//     }
-
-//     componentDidMount() {
-//         this.getRefCount();
-//     }
-//     componentDidUpdate(prevProps) {
-//         if (this.props.activeUser !== prevProps.activeUser) {
-//             this.getRefCount();
-//         }
-//     }
-
-//     getRefCount = () => {
-//         database.ref(`userData/${this.state.activeUser}`).on("value", snapshot => {
-//             if (snapshot && snapshot.exists()) {
-//                 this.setState({ referralCount: snapshot.val().referrals });
-//             }
-//         })
-//     }
-
-//     render() {
-//         return (
-//             <div className="progressbar">
-//                 <Row>
-//                     <Col>
-//                         <Card className='PCard'>
-//                             <Card.Title className='Title'>Your Progress</Card.Title>
-//                             <Card.Body>
-//                                 <div className='Milestones'>
-//                                     <div>0</div>
-//                                     <div style={{ marginLeft: '8vw' }}>10</div>
-//                                     <div style={{ marginLeft: '8vw' }}>25</div>
-//                                     <div style={{ marginLeft: '8vw' }}>50</div>
-//                                     <div style={{ marginLeft: '8vw' }}>100</div>
-//                                 </div>
-//                                 <ProgressBar
-//                                     striped now={this.state.referralCount}
-//                                     className='ProgressBar'
-//                                     label={this.state.referralCount}
-//                                 />
-
-
-//                                 <div className='Milestones'>
-//                                     <div>Rewards</div>
-//                                     {prizes.map(prize => {
-//                                         return <div style={{ marginLeft: '3vw' }} className='Rewards'>{prize}</div>
-//                                     })}
-//                                 </div>
-//                             </Card.Body>
-
-//                         </Card>
-//                     </Col>
-
-//                     <Col>
-//                         <Card className='Message'>
-//                             <Card.Body>You are {this.state.nextPrizeAt - this.state.referralCount % this.state.nextPrizeAt} referrals away from the next prize,
-//                                 which is {longerPrizes[Math.floor(this.state.referralCount / 5)]}!!</Card.Body>
-//                         </Card>
-//                     </Col>
-//                 </Row>
-//                 <Row>
-//                     <div className="carousel">
-//                         <Carousel indicators={false}>
-//                             <Carousel.Item>
-//                                 <img class="d-block mx-auto" src="https://live.staticflickr.com/65535/49968391176_5810f896e5_o.png" width="280px" height="280px" alt="FaceBookGroup" />
-//                             </Carousel.Item>
-//                             <Carousel.Item>
-//                                 <img class="d-block mx-auto" src="https://live.staticflickr.com/65535/49968391076_1e2941b92d_o.png" width="280px" height="280px" alt="Sticker" />
-//                             </Carousel.Item>
-//                             <Carousel.Item>
-//                                 <img class="d-block mx-auto" src="https://live.staticflickr.com/65535/49968658347_90e8b3770c_o.png" width="280px" height="280px" alt="T-Shirt" />
-//                             </Carousel.Item>
-//                             <Carousel.Item>
-//                                 <img class="d-block mx-auto" src="https://live.staticflickr.com/65535/49968658267_051134fdbf_o.png" width="280px" height="280px" alt="Sneaker" />
-//                             </Carousel.Item>
-//                         </Carousel>
-//                     </div>
-//                 </Row>
-//             </div>
-//         )
-//     }
-// }
-
-// export default Progress;
