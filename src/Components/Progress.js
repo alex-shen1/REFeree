@@ -20,12 +20,12 @@ const prizes = [
     'Unreleased shoes',
 ]
 
-const longerPrizes = [
-    'being added to the exclusive Facebook Group',
-    'getting custom Sneak co. stickers in the mail',
-    'receiving a custom  Sneak co. T-shirt',
-    'receiving your own pair of not-yet-released Sneak co. sneakers'
-]
+const longerPrizes = {
+    10: 'being added to the exclusive Facebook Group',
+    25: 'getting custom Sneak co. stickers in the mail',
+    50: 'receiving a custom  Sneak co. T-shirt',
+    100: 'receiving your own pair of not-yet-released Sneak co. sneakers'
+}
 
 export default function Progress(props) {
     const [referralCount, setReferralCount] = useState(0);
@@ -77,7 +77,7 @@ export default function Progress(props) {
                 <Col>
                     <Card className='Message'>
                         <Card.Body style={{ marginTop: "6vh" }}>{referralCount < 100 ? `You are ${nextPrizeAt - referralCount % nextPrizeAt} referrals away from the next prize,
-                                which is ${longerPrizes[Math.floor(referralCount / 5)]}!!` : "You have gained every possible reward!"}</Card.Body>
+                                which is ${longerPrizes[nextPrizeAt]}!!` : "You have gained every possible reward!"}</Card.Body>
                     </Card>
                 </Col>
             </Row>
