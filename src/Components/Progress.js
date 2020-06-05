@@ -37,7 +37,9 @@ export default function Progress(props) {
         if (activeUser !== null) {
             database.ref(`userData/${activeUser}`).on("value", snapshot => {
                 if (snapshot && snapshot.exists()) {
-                    setReferralCount(snapshot.val().referrals);
+                    let refCount = snapshot.val().referrals;
+                    setReferralCount(refCount);
+                    setNextPrizeAt(refCount < 10 ? 10 : (refCount < 25 ? 25 : (refCount < 50 ? 50 : 100))) 
                 }
             })
         }
@@ -74,8 +76,8 @@ export default function Progress(props) {
 
                 <Col>
                     <Card className='Message'>
-                        <Card.Body style={{ marginTop: "6vh" }}>You are {nextPrizeAt - referralCount % nextPrizeAt} referrals away from the next prize,
-                                which is {longerPrizes[Math.floor(referralCount / 5)]}!!</Card.Body>
+                        <Card.Body style={{ marginTop: "6vh" }}>{referralCount < 100 ? `You are ${nextPrizeAt - referralCount % nextPrizeAt} referrals away from the next prize,
+                                which is ${longerPrizes[Math.floor(referralCount / 5)]}!!` : "You have gained every possible reward!"}</Card.Body>
                     </Card>
                 </Col>
             </Row>
